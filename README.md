@@ -1,1 +1,1 @@
-# Lecture_summary
+### 학원 강좌 요약
