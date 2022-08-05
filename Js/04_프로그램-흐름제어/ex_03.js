@@ -2,7 +2,7 @@
 있다. 이처럼 이진수가 하나 늘어날 때 마다 2배씩 표현할 수 있는 정보의 수가 늘어날 때 10개의 이진수는 총 몇개의 정보를
 표현할 수 있는지를 for문으로 구현하시오.*/
 
-cnt = 1;
+let cnt = 1;
 for (let binary = 1; binary <= 10; binary++){
     cnt *= 2;
     console.log(`이진수 ${binary}개는 ${cnt}개의 정보를 표시가능`);

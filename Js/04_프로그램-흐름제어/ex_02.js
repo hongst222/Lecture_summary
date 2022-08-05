@@ -3,7 +3,7 @@
 표현할 수 있는지를 while문으로 구현하시오.*/
 
 let binary = 1;
-cnt = 1;
+let cnt = 1;
 while (binary <= 10) {
     cnt *= 2;
     console.log(`이진수 ${binary}개는  ${cnt}개의 정보를 표시가능`);
