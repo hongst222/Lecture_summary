@@ -1,0 +1,8 @@
+//코드를 간략하게 짜보자
+const numOfApples = 123;
+
+const extra = numOfApples%10;
+console.log(`나머지: ${extra}`);
+
+let basketCount = (numOfApples - extra)/10 + (extra == 0 ? 0 : 1);
+console.log(`바구니 수: ${basketCount}`);
