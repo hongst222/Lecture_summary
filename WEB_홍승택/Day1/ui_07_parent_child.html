@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>후손(하위)선택자와 자손(자식,직하위)선택자</title>
+    <style>
+        /* #header를 기준으로 '자식' 중 h1을 선택해서 글자색상을 red로 해라.*/
+        #header > h1 {color:red;}
+        
+        /* 6일차 노란색배경으로 하기
+        #header라는 아이디를 가지고 있는 선택자의 '자식'중 div를 선택하고 그 div의 자식인 h1을선택, 배경색을 yellow로 하기.
+        자손선택자는 직하위에 있는 요소를 선택*/
+        #header > div > h1 {background-color: yellow;}
+
+        /*section이라는 id를 가지고 있는 요소의 '후손'중 h2의 배경색을 skyblue로 하기.
+        후손선택자는 하위 요소 모두를 선택함.*/
+        #section h2 {background-color: skyblue;}
+
+        /* .text를 '자식선택자'를 사용하여 글자 크기를 12px로 변경(font-size)*/
+        #article > .text {font-size: 12px;}
+
+        /* .text중 p만 글자 색상을 orange로 적용하고 싶은 경우
+        태그 선택자와 클래스선택자(or id) 붙여서 작성하면 더 세밀하게 선택 가능.*/
+        p.text {color: orange;}
+
+        
+
+        
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>웹퍼블리셔</h1>
+        <div>
+            <h1>6일차</h1>
+        </div>
+    </div>
+    <div id ="section">
+        <h2>후손선택자와 자손선택자</h2>
+        <div id="article">
+            <h2 class="text">후손선택자와 자손선택자의 차이</h2>
+            <p class="text">얘는 위 12px의 적용될까요?</p>
+        </div>
+    </div>
+    
+</body>
+</html>
