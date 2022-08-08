@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목록태그</title>
+</head>
+<body>
+    <h1>목록을 만드는 태그</h1>
+    <h2>Unordered List: 순서가 없는 목록 태그</h2>
+    
+    <ul type ="square"> <!-- type: circle, disc(기본값), square-->
+        <li>강아지</li> <!-- List Item: 리스트를 이루는 목록의 요소-->
+        <li>고양이</li>
+        <li>다람쥐</li>
+    </ul>
+    
+    <h2>Order List: 순서가 있는 목록 태그</h2>
+    <ol type="i"> <!-- type: 1(기본), A, a, i, I-->
+        <li>냄비에 물 받기</li>
+        <li>물이 끓면 면 넣기</li>
+        <li>완성 후 먹기</li>
+    </ol>
+
+    <h2>Description List: 설명 목록 태그</h2>
+    <dl>
+        <dt>만반잘부</dt>
+        <dd>만나서 반가워요 잘 부탁드려요.<br>
+            이름이 무엇인가요?<br>
+            ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ<br>
+        </dd>
+    </dl>
+
+    <h2>중첩 목록</h2>
+    <p>대분류 > 중분류 > 소분류 와 같이 카테고리 형태로 작성할 때 사용,내비게이션 메뉴 작성 시 서브메뉴 만들때 사용함. 3depth 이상은 지양</p>
+    <ul>
+        <li>바다동물
+            <ul>
+                <li>물개</li>
+                <li>고래</li>
+                <li>해달</li>
+            </ul>
+        </li>
+        
+        <li>새
+            <ul>
+                <li>참새</li>
+                <li>비둘기</li>
+                <li>펠리컨</li>
+            </ul>
+        </li>
+
+    </ul>
+
+</body>
+</html>

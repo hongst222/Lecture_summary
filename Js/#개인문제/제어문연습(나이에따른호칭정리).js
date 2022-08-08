@@ -21,9 +21,10 @@ Peter Kim(26세, 남성)은 이제 막 한국에서 거주하기 시작한 싱�
 
 /**문제파악
  * 필요 변수 age(나이), gender(성별)  
- * 나이비교, 성별비교 --> 나이? --> 성별 순 
+ * 나이비교, 성별비교 --> 나이 --> 성별 순 
  */
-let peterAge = 26;
+let peterAge = 26;  //문제의 피터 나이 정의
+
 function whatShouldICallYou(age,gender){
     if (age == peterAge){
         return "친구";
@@ -33,9 +34,10 @@ function whatShouldICallYou(age,gender){
         return gender == "남성" ? "형" : "누나";
     }
 }
-console.log(whatShouldICallYou(26,"여성"));
-console.log(whatShouldICallYou(26,"남성"));
-console.log(whatShouldICallYou(24,"여성"));
-console.log(whatShouldICallYou(24,"남성"));
-console.log(whatShouldICallYou(27,"여성"));
-console.log(whatShouldICallYou(27,"남성"));
+// 테스트 코드
+console.log(whatShouldICallYou(26,"여성"));     // 친구
+console.log(whatShouldICallYou(26,"남성"));     // 친구
+console.log(whatShouldICallYou(24,"여성"));     // 여동생
+console.log(whatShouldICallYou(24,"남성"));     // 남동생
+console.log(whatShouldICallYou(27,"여성"));     // 누나
+console.log(whatShouldICallYou(27,"남성"));     // 형
