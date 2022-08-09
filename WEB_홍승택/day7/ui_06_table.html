@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Tag(Create Table)</title>
+    <style>
+        table, tr, td, th {border: 1px solid red;}
+        /* tr {border: 1px solid red;}
+        td {border: 1px solid red;} */
+
+        /*  border-collapse: collapse; 
+            중복되는 표와 셀의 테두리를 한 줄로 표시    */
+        table {width: 500px;border-collapse: collapse;}
+        
+        /*  padding 
+            안쪽 여유 픽셀      */
+        th, td {padding: 10px;}
+        thead {background-color: rgb(201, 110, 243); border-top: 3px solid blue}
+        tbody > tr:nth-child(2) {background-color: yellow;}
+        colgroup > col:nth-child(2) {background-color: pink;}
+        table > caption {font-size: 30px; font-weight: bold;}
+        /*멀티커서 단축키: Alt+ 클릭 클릭*/
+    </style>
+</head>
+<body>
+    <!-- 표를 만들 때에는 먼저 talbe 태그 작성-->
+    <table>
+        <!-- caption 태그
+            표의 제목을 나타낼 수 있다.-->
+        <caption>This is table title.</caption>
+        <!-- 여러 열(column)을 묶어서 지정하는 태그. 그 안의 <col> 태그의 개수는 열의 개수와 동일해야 하며, 관련된 내용인 경우 묶어주는게 접근성 측면에서도 좋다.-->
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+
+        <!-- <thead> 표의 제목 행을 묶어주는 태그 -->
+        <thead>
+            <tr>
+                <th>title1</th> <!-- table header : 행 내부의 제목칸 태그-->
+                <th>title2</th>
+                <th>title3</th>
+                <th>title4</th>
+            </tr>
+        </thead>
+        <!-- <tbody> 표의 본문 행을 묶어주는 태그-->
+        <tbody>
+            <!-- table row: 표의 행(가로줄) 태그-->
+            <tr>
+                <!-- table data: 행 내부의 칸()-->
+                <td>content1-1</td>
+                <td>content1-2</td>
+                <td>content1-3</td>
+                <!-- rowspan: 행을 합쳐주는 속성 (1-4,2-4,3-3,4-4 병합)-->
+                <td rowspan="4">content1-4</td>
+            </tr>
+            <tr>
+                <td>content2-1</td>
+                <td>content2-2</td>
+                <td>content2-3</td>
+                <!-- <td>content2-4</td> -->
+            </tr>
+            <tr>
+                <td>content3-1</td>
+                <!-- colspan: 열을 합쳐주는 속성 (3-2, 3-3 병합)-->
+                <td colspan="2">content3-2</td>
+                <!-- <td>content3-3</td> -->
+                <!-- <td>content3-3</td> -->
+            </tr>
+            <tr>
+                <td>content4-1</td>
+                <td>content4-2</td>
+                <td>content4-3</td>
+                <!-- <td>content4-4</td> -->
+            </tr>
+        </tbody>
+        <!-- 표의 요약행을 묶어주는 태그-->
+        <tfoot>
+            <tr>
+                <td>content5-1</td>
+                <td>content5-2</td>
+                <td>content5-3</td>
+                <td>content5-4</td>
+            </tr>  
+        </tfoot>  
+    </table>
+</body>
+</html>
