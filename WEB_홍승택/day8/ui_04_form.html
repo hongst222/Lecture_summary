@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼태그(입력양식태그)</title>
+
+</head>
+<body>
+    <form action="http://naver.com" method="get">
+        <!-- form태그의 대표 속성
+            action 속성: form태그 안의 내용들을 서버로 보낼때 해당 데이터가 도착할 URL주소(프로그램,서버)   
+            HTML5에서는 필수 아님
+            method 속성: form 내용을 서버로 보내는 방식
+                -get 요청: 주소표시줄에 담아 전송. 보안 취약, 길이 제한 0
+                -post 요청: 내용이 드러나지 않고, 봉투에 담아서 보낸다(개념적으로) 길이 제한 X
+        -->
+        <!-- fieldset
+             폼 요소들을 묶어주는 역할을 하는 태그-->
+        <fieldset>
+            <!-- legend
+                fieldset의 제목을 달아주는 태그(fieldset 태그 안에서만 사용)-->
+            <legend>로그인 정보</legend>
+            <ul>
+                <li>
+                    <!--    label태그는 input태그의 제목-->
+                    <label for="user_id">ID</label>
+                    <!--    label과 input 이어주기: label태그의 for속성과 input태그의   id속성값 일치
+                            placeholder속성: 힌트주기
+                            size: 입력창 길이
+                            minlength: 최소글자수 제한
+                            maxlength: 최대글자수 제한
+                            required: 필수 필드 생성
+                            autofocus: 페이지 진입시 자동 커서 입력
+                    -->
+                    <input type="text" id="user_id" size="10" minlength="3" maxlength="8" placeholder="입력하셈" required autofocus>
+                </li>
+                <li>
+                    <label for="user_pw">PW</label>
+                    <input type="password" id="user_pw" required>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>개인정보</legend>
+            <ul>
+                <li>
+                    <label for="user_name">이름</label>
+                    <input type="text" id="user_name" required>
+                </li>
+                <li>
+                    <label for="user_phone">연락처</label>
+                    <input type="tel" id="user_phone" required>
+                </li>
+                <li>
+                    <label for="user_email">이메일</label>
+                    <input type="email" id="user_email" required>
+                </li>
+                <li>
+                    <label for="user_web">웹사이트</label>
+                    <input type="url" id="user_web">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>등록 정보</legend>
+            <ul>
+                <li>
+                    <label>참여인원(최대 10명)</label>
+                    <input type="number" value="0" min="0" max="10">
+                </li>
+                <li>
+                    <label>지원물품(1인당 5개)</label>
+                    <!--value
+                        기본값 설정
+                        min
+                        최솟값 설정
+                        max
+                        최댓값 설정
+                        step
+                        늘어나거나 줄어드는 간격 설정
+                    -->
+                    <input type="number" value="0" min="0" max="50" step="5">
+                </li>
+                <li>
+                    <label>희망 단계(하,중,상</label>
+                    <input type="range" value="1" min="1" max="3">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>라디오버튼, 체크박스</legend>
+            <ul>
+                <li>
+                    <p>라디오버튼</p>
+                    <!-- 암시적 표기-->
+                    <label>
+                        <!-- radio btn을 쓸 때에는 value값을 넣어줘야함.-->
+                        <input type="radio" name="gender" value="male">남자
+                    </label>
+                    <!--라디오 버튼은 주로 레이블의 왼쪽에 위치(통상적)
+                        
+                        라디오 버튼은 여러 항목중에 한개만 선택 가능하게 할 경우 주로 사용
+                        여러개 중에 한개를 선택해야 하는 경우 name 속성 값을 동일하게 함.
+                        서버에 데이터를 넘길때 value속성으로 데이터를 넘겨주기 때문에 value 속성은 필수이다.
+
+                        input태그와 label태그를 연결하는 방법
+                        1. input태그의 id속성과 label태그의 for속성값을 동일하게 입력(명시적)   //선호
+                        
+                        2. label태그의 내부에 input태그를 입력(암시적) => 이 경우, id, for 속성 필요x. 단, 하위버전 브라우저에서 인식하지 못할 수 있기 때문에 가급적이면 명시적 방법으로 작성해주는게 안전하기도 하고 접근성측면에서도 좋다.-->
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">여자</label>
+                </li>
+                <li>
+                    <p>체크박스(관심사)</p>
+                    <label>
+                        <input type="checkbox" value="game">게임
+                    </label>
+                    <label>
+                        <input type="checkbox" value="sports">스포츠
+                    </label>
+                    <label>
+                        <input type="checkbox" value="reading">독서
+                    </label>
+                    <label>
+                        <input type="checkbox" value="music">음악듣기
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>컬러, 날짜, 시간</legend>
+            <ul>
+                <li>
+                    <label>
+                        컬러선택
+                        <!-- IE에서 제공 x -->
+                        <input type="color" value="#ff0000">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        날짜 선택<br>
+                        <input type="date" value="2022-02-02">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        날짜 및 시간<br>
+                        <input type="datetime-local" value="2020-12-30T10:10">
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        시간 선택<br>
+                        <!-- 시간 step은 초단위가 기본이다. 120-> 2분단위 -->
+                        <input type="time" value="10:10" step="10">
+                        
+                    </label>
+                </li>
+                <li>
+                    <p>파일 첨부</p>
+                    <input type="file">
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>

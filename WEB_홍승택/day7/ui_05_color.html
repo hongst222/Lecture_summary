@@ -7,13 +7,31 @@
     <title>Color</title>
     <style>
         div {width: 200px; height: 100px;}
+        
+        /*  6자리의 0~9, A~F 숫자와 문자로 이루어짐(16진수로 컬러 표현)*/
         #hex6 {background-color: #ff0000;}
+       
+        /*  6자리의 6자리의 헥사코드라 2개씩 쌍으로 같은 글자인 경우 3자리로 축약해서 사용가능*/
         #hex3 {background-color: #f00;}
+
+        /*  0~255까지의 숫자로 표현하는 방식*/
         #rgb {background-color: rgb(255,0,0);}
+
+        
+        /*  rgb코드에 alpha값(투명도)추가 방식, 알파값은 (투명)0~1(불투명) 사이의 값으로 표현*/
         #rgba {background-color: rgba(255,0,0,1);}
+        
+        /*  hue(색상)[0~360색상환의 각도숫자로 표현]
+            saturation(채도)[탁함0~100%], 
+            lightness(명도)[어두움0% ~ 밝음100%] 값으로 표현
+            명도 0 -> 검정색 명도 100 -> 흰색               */
         #hsl {background-color: hsl(0,100%,50%);}
+
         #hsla {background-color: hsl(0,100%,50%,1);}
+
         #rgba_05 {background-color: rgba(255,0,0,.5);}
+
+        /*  opacity 속성: 요소 자체의 투명도를 조절 (투명)0 ~ 1(불투명) 사이의 값으로 표현*/
         #opacity_05 {background-color: red; opacity:.5;}
     </style>
 </head>
