@@ -34,7 +34,7 @@
                             required: 필수 필드 생성
                             autofocus: 페이지 진입시 자동 커서 입력
                     -->
-                    <input type="text" id="user_id" size="10" minlength="3" maxlength="8" placeholder="입력하셈" required autofocus>
+                    <input type="text" id="user_id" size="10" minlength="3" maxlength="8" placeholder="입력하셈" required autofocus autocomplete="off">
                 </li>
                 <li>
                     <label for="user_pw">PW</label>
@@ -163,8 +163,49 @@
                     <p>파일 첨부</p>
                     <input type="file">
                 </li>
+                <li>
+                    <p>현재 진행 상태(progress)</p>
+                    <progress max="100" value="6"></progress>
+                </li>
+                <li>
+                    <p>범위 내 값 표시</p>
+                    <meter min="0" max="100" low="30" high="70" value="70"></meter>
+                </li>
             </ul>
         </fieldset>
+        <fieldset>
+            <legend>텍스트 여러줄 작성</legend>
+            <!-- textarea 영역에 글을 먼저 넣어놓고 싶을 때(ex: 글양식)
+                주의할 점: 태그 안쪽에 엔터, 탭, 띄어쓰기 등이 모두 드러나기 때문에 주의해야함
+
+                cols 속성: 열(글자수 기준)
+                rows 속성: 행수
+                // 둘다 크기 조절하는 속성. css로 수정도 가능함.
+                readonly 속성: 읽기전용 필드-->
+            <textarea cols="30" rows="10" readonly>
+이름:
+연락처:
+환불사유:
+            </textarea>
+        </fieldset>
+        <fieldset>
+            <legend>셀렉트 박스</legend>
+            <select>
+                <option value="none">옵션선택</option>
+                <option value="strawberry">딸기</option>
+                <option value="apple">사과</option>
+                <option value="banana">바나나</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>버튼들</legend>
+            <input type="submit" value="확인">
+            <input type="button" value="ㅎㅇ">
+            <button type="submit">hello</button>
+            <input type="reset" value="초기화">
+            <input type="image" src="">
+        </fieldset>
+
     </form>
 </body>
 </html>
