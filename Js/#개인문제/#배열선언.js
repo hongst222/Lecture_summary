@@ -229,7 +229,7 @@ let sortNumber = [1,4,3,7,2,9,11,23,55,10];
 
 function sortSolution(inputNumber){
     let sort = [];
-    sort = inputNumber.sort((a,b) => a-b); //a = next , b = previous a-b값이 음수가 되면 자리가 바뀜. 즉 이전 수가 다음 수보다 크면 자리가 바뀜
+    sort =inputNumber.sort((a,b) => a-b);  //a = next , b = previous a-b값이 음수가 되면 자리가 바뀜. 즉 이전 수가 다음 수보다 크면 자리가 바뀜
                                                                                                 // --> 큰 수가 뒤로 가게되는 것.
     return sort;
     
