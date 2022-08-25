@@ -28,3 +28,8 @@ switch (number){
         console.log("잘못된 number 값 입력");
         break;
 }
+
+/**
+ * 
+ */
+
