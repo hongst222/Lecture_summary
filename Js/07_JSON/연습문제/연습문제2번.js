@@ -18,16 +18,17 @@ const keys = Object.getOwnPropertyNames(exam);
 //console.log(keys);
 
 let mSum = 0, mAvg =0;
+
 for (const k of keys){
     let sum = 0, avg = 0;
 
-    mSum += exam[k][2]; 
-    for(let i = 0; i<exam.남철.length; i++){
+    for(let i = 0; i<exam[k].length; i++){
         sum += exam[k][i];
     }
-    avg = sum/exam.남철.length;
+    avg = sum/exam[k].length;
     console.log("%s의 총점: %d 평균: %d",k,sum,avg);
-
+    
+    mSum += exam[k][2]; 
 }
 
 mAvg = mSum/keys.length;
