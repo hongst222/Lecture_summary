@@ -42,6 +42,6 @@ function myGame(n){
     console.log(`박수를 총 ${countSum}번 쳤습니다.`);
 };
 
-myGame(33);
+myGame(333);
 
 

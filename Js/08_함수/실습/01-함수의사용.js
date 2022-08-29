@@ -1,5 +1,5 @@
 /** 함수를 정의하고 호출하기 */
-// 함수 정의하기ㅏ
+// 함수 정의하기
 function sayHello() {
     // 두개의 출력 명령을 내장함.
     console.log("Hello Javascript");

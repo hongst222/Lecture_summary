@@ -21,11 +21,11 @@ console.groupEnd();
 
 //  문제 5
 function printRevStar(max, current = 1){
-    if( max < current){
+    if( current > max){
         return;
     } else {
         let str = "";
-        for(let i = max; i >=current; i--){
+        for(let i = 0; i <max + 1 -current; i++){
             str += "*"
         }
         console.log(str);

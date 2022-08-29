@@ -20,18 +20,17 @@ function myGame(n){
         let str = ""+i;
         let str2 = "";
         // 해당 숫자 짝 횟수
-        let count = 0;
+        
 
         for (const k of str){
             if (k=== "3" || k=== "6" || k=== "9" ) {
                 str2 +="짝";
-                count++;
+                countSum++;
             }
         }
-        if(count){
-            str = `${str2} (${i}) -----> ${count}번`;
+        if(str2.length){
+            str = `${str2} (${i}) -----> ${str2.length}번`;
         }
-        countSum += count;
         console.log(str);
     }
     console.log(`박수를 총 ${countSum}번 쳤습니다.`);
