@@ -26,7 +26,7 @@ class UserClass {
     /** 멤버변수 #email에 값을 할당하기 위한 setter 함수 */
     set email(value) {
         if (!value) {
-            console.log("userName을 입력하세요.");
+            console.log("email을 입력하세요.");
             return;
         }
         this.#email = value;
