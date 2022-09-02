@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>앵커태그 및 이미지태그</title>
+</head>
+<body>
+    <h1>앵커태그와 이미지태그</h1>
+
+    <h2>텍스트를 이용한 링크(앵커태그)</h2>
+    <a href="http://naver.com">네이버</a>
+    <a href="http://daum.net">다음</a>
+    <a href="http://google.com" target="_blank">구글</a>
+    <a href="http://nate.com">네이트</a>
+
+    <h2>이미지를 이용한 링크</h2>
+    <a href="http://naver.com">
+        <img src="images/naver_logo.png" alt="네이버 로고 이미지" width="100">
+    </a>
+    <a href="http://daum.net">
+        <img src="images/daum_logo.png" alt="다음 로고 이미지">
+    </a>
+    <a href="http://google.com" target="_blank">
+        <img src="images/google_logo.png" alt="구글 로고 이미지">
+    </a>
+    <a href="http://nate.com">
+        <img src="images/nate_logo.png" alt="네이트 로고 이미지">
+    </a>
+
+    <h2>이미지 태그</h2>
+    <img src="images/penguin.jpg" alt="펭귄이 윙크하고 있는 사진">
+    <img src="펭귄.jpg" alt="이미지가 나타나지 않을 때 대체 텍스트">
+    <img src="https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fsports-phinf.pstatic.net%2F20220808_141%2F1659925077055eEl0J_PNG%2F%25B1%25A4%25B5%25BF%25C1%25A6%25BE%25E02.png%22&type=nf464_260" alt="퍼온 이미지" title="이미지 제목">
+
+    <h2>앵커태그를 이용한 앱 바로 연결 **하이픈은 없어도 무방</h2>
+    <a href="tel:010-1234-5678">전화 걸기</a>
+    <a href="sms:010-1234-5678">메세지 보내기</a>
+    <a href="mailto:kme6918@gmail.com">이메일 보내기</a>
+
+    <!-- 1. 파일 경로
+    이미지파일을 불러올 때 <img>태그에 src속성(source=주소=경로=위치)에 이미지가 위치한 경로를 작성한다.
+
+    2. 이미지 대체 텍스트 삽입(필수)
+    alt(alternate=대체)속성 : 이미지가 나타나지 않을 경우 이미지 대신 설명해주는 문구.
+    장식용 이미지에는 alt="" 를 사용(속성 입력하되 값은 비워둠)
+
+    3. width, height 속성 : 이미지의 너비, 높이 조절
+    현재는 CSS로 조절하기 때문에 이미지 태그에 직접 입력하지 않는 경우가 대부분(지양)
+    HTML5에서 이미지의 width나 height 속성값에 픽셀 외에 다른 단위 허용X
+
+    4. title 속성 : tooltip(풍선도움말) 띄우고 싶을 때
+
+    5. 링크 새창(새탭)에서 열기 : 앵커태그의 타겟 속성 사용
+    target="_blank"
+    
+    -->
+</body>
+</html>

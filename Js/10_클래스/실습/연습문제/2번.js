@@ -32,12 +32,12 @@ class Rectangle {
 
     //  둘레의 길이를 구하는 getAround 메서드 정의
     getAround() {
-        return (this.#height + this.#width)* 2;
+        return (this.height + this.width)* 2;
     }
     
     //  넓이를 구하는 getArea() 메서드 정의
     getArea() {
-        return this.#height * this.#width;
+        return this.height * this.width;
     }
 
 }

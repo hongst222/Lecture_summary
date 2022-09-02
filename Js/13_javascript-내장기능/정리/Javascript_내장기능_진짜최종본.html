@@ -1,0 +1,800 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>2022.09.01</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="35e4a9bb-2f34-4a4b-8e71-8d444c021e08" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🗓️</span></div><h1 class="page-title">2022.09.01</h1><table class="properties"><tbody><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M10.8889,5.5 L3.11111,5.5 L3.11111,7.05556 L10.8889,7.05556 L10.8889,5.5 Z M12.4444,1.05556 L11.6667,1.05556 L11.6667,0 L10.1111,0 L10.1111,1.05556 L3.88889,1.05556 L3.88889,0 L2.33333,0 L2.33333,1.05556 L1.55556,1.05556 C0.692222,1.05556 0.00777777,1.75556 0.00777777,2.61111 L0,12.5 C0,13.3556 0.692222,14 1.55556,14 L12.4444,14 C13.3,14 14,13.3556 14,12.5 L14,2.61111 C14,1.75556 13.3,1.05556 12.4444,1.05556 Z M12.4444,12.5 L1.55556,12.5 L1.55556,3.94444 L12.4444,3.94444 L12.4444,12.5 Z M8.55556,8.61111 L3.11111,8.61111 L3.11111,10.1667 L8.55556,10.1667 L8.55556,8.61111 Z"></path></svg></span>날짜</th><td><time>@2022년 9월 1일</time></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>유형</th><td><span class="selected-value select-value-color-gray">Lecture summary</span></td></tr><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>유형2</th><td></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>난이도</th><td></td></tr><tr class="property-row property-row-status"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>작업완료여부</th><td><span class="status-value select-value-color-blue"><div class="status-dot status-dot-color-blue"></div>In progress</span></td></tr></tbody></table></header><div class="page-body"><ul id="643f803e-fa31-4a38-addf-8cb367de3461" class="bulleted-list"><li style="list-style-type:disc">공부할때 javascript cheat sheet 를 검색해서 공부하자!</li></ul><ul id="5f922093-620a-4c1a-bf95-03d4b653fb9c" class="bulleted-list"><li style="list-style-type:disc"><strong>overflow (※기본 상식)</strong><ul id="7f4f777b-457b-43dc-9c17-d6026fe81f97" class="bulleted-list"><li style="list-style-type:circle">byte가 표현 가능한 수의 범위는 -128~127이다.</li></ul><ul id="efce761f-0905-479a-bc58-802060e4479d" class="bulleted-list"><li style="list-style-type:circle">a = 127일때</li></ul><ul id="6366d38a-3f2b-4730-abca-734d7223a035" class="bulleted-list"><li style="list-style-type:circle">a+1 = -128이 된다.</li></ul><ul id="52b6278d-4a9c-47d6-a4c2-eeb8cb9cd5d2" class="bulleted-list"><li style="list-style-type:circle">이 현상을 overflow라고 한다.</li></ul></li></ul><h1 id="b0c4f26e-f5d1-4603-b19e-48bc39429a77" class="">Javascript 내장 기능</h1><p id="ac962455-1954-425c-ba9e-f2fd4da17521" class="">
+</p><p id="98fac604-c91e-45fd-bcba-9f969e7450b2" class=""><strong>내장 객체 (API)</strong> </p><p id="4b1a3c1d-1043-456e-b191-778f3c5dc606" class="">개발자가 호출할 수 있는 or 활용할 수 있는 기본 기능의 모음</p><p id="378ce4c6-4913-41c8-8a94-199f9b785bb6" class="">MDN에서 많은 API에 대해 알 수 있음.</p><p id="f9f16974-9b4e-4c8b-a172-7369eb0bfa38" class="">
+</p><h2 id="2f572f32-ce5d-4c12-a630-e5bac6384582" class=""><details open=""><summary><strong>isNaN (</strong>Not a Number ⇒ 숫자가 아님.)</summary></details></h2><div class="indented"><p id="63622b6d-1830-45c4-aeda-b4bb887ddded" class="">숫자가로 변환이 되는가 안되는가를 판단하기 위함.</p><ul id="e49162ec-2998-457b-b3f8-e8768265ec38" class="bulleted-list"><li style="list-style-type:disc">숫자면  false 숫자가 아니면 true</li></ul><ul id="5c631c26-f72c-4748-8fa2-e4452a0e0036" class="bulleted-list"><li style="list-style-type:disc">숫자로 변환 가능한 형식일 경우 false;</li></ul><p id="bda2b389-1f12-4e26-826d-c60c34ad0d8c" class="">
+</p></div><h2 id="82deda61-50b5-4b0b-afe4-ea5f1977a107" class=""><details open=""><summary>Parse</summary></details></h2><div class="indented"><p id="9c042b30-1ef7-4cda-be56-d1c9304ae9c9" class=""><strong>parseFloat()</strong></p><ul id="2ea95acd-c930-403e-a550-1fd81f039838" class="bulleted-list"><li style="list-style-type:disc">주어진 값에서 변환한 부동소수점 수(실수)를 리턴<ul id="6db76bd1-71f6-42fc-9d9d-ebc953a87253" class="bulleted-list"><li style="list-style-type:circle">변환이 불가하면 NaN을 리턴</li></ul><ul id="b25b10e8-3925-4ee3-ae93-42207f754374" class="bulleted-list"><li style="list-style-type:circle">ex) parseFloat(314e-2) = 3.14 </li></ul></li></ul><p id="1e12b297-fbc7-4a34-b5fa-557b22ad5949" class=""><strong>parseInt(value, int)</strong></p><ul id="5af7f37f-e2cb-4db9-8498-8117b58c5d4c" class="bulleted-list"><li style="list-style-type:disc">value를 int진법 수를 기준으로 10진수 값으로 변환한다.<ul id="44745ca2-32b6-4a6a-89a2-aa3be0cae437" class="bulleted-list"><li style="list-style-type:circle">변환이 불가하면 NaN을 반환</li></ul><ul id="5e93db72-b223-4304-99c4-7688500f2b30" class="bulleted-list"><li style="list-style-type:circle">숫자 + 글자 형태의 문자열은 숫자 부분만 취함</li></ul><ul id="3dc1421a-1bca-434b-a8d7-5c85339c5ab2" class="bulleted-list"><li style="list-style-type:circle"><strong>숫자</strong> + 글자 + 숫자 인 경우 “글자+숫자”로 문자열이 되므로 맨앞에 있는 <strong>숫자</strong>만 변환</li></ul><ul id="c9504a8b-9e4c-40ec-8ccb-6eaf965726f5" class="bulleted-list"><li style="list-style-type:circle">글자 + 숫자 형태의 문자열은 변환 불가 - NaN</li></ul><ul id="196fedd6-4d71-4618-be95-bd875e214112" class="bulleted-list"><li style="list-style-type:circle">소수점을 포함할 경우 정수부분만 취한다.</li></ul></li></ul><p id="7481a00e-b4bb-48da-a622-03e2392fae74" class="">
+</p></div><h2 id="2821d029-9e76-4c59-9460-9bf77d592eef" class=""><details open=""><summary>encode, decode</summary></details></h2><div class="indented"><h3 id="ad03514c-bf24-4cc7-82cc-e5d21e49a919" class="">encodeURI(string)</h3><ul id="b705c3f5-da4c-4312-9082-0e0e206a0bbc" class="bulleted-list"><li style="list-style-type:disc">주어진 문자열을 URL에 포함시키기에 적절한 형태로 변환(=인코딩)하는 처리<ul id="ad6d3bf3-cd3f-47aa-987b-6498523b412e" class="bulleted-list"><li style="list-style-type:circle">인코딩하지 않는 문자<ul id="bbf492ef-7cf5-4da9-91b6-a221894fbdd8" class="bulleted-list"><li style="list-style-type:square"> A-Z a-z 0-9 ; , / ? :  @ &amp; = + $ - _ . ! ~ * ( ) ‘ #</li></ul></li></ul></li></ul><h3 id="7fc37a9d-9e71-49f4-ac5d-7137b03f4aec" class="">decodeURI(string)</h3><p id="c329e027-09e1-40de-86e5-d60f29a29f7c" class="">코딩 된 문자열을 원래의 문자열로 역변환 (디코딩)</p><h3 id="15924619-21c1-42b7-bb1b-7f15ac089f76" class="">encodeURIComponent(string)</h3><ul id="4ba493f5-8d14-44f9-9e41-6ac0c21676a4" class="bulleted-list"><li style="list-style-type:disc">알파벳과 숫자 및 비예약 표식을 제외한 모든 글자를 URL에 포함시킬 수 있는 문자열로 인코딩한다.<ul id="cfbf1c4d-679d-4ee3-9e27-940348030e20" class="bulleted-list"><li style="list-style-type:circle">⇒ URL에 사용해도 문제가 없는 특수문자를 제외하고 모든 글자를 변환</li></ul></li></ul><h3 id="e879bf8f-6d0b-4c3d-8b19-c37b7dd6a9aa" class="">decodeURIComponent(string)</h3><ul id="e50e89bb-fb8c-46c2-88f1-ca4ec3766e83" class="bulleted-list"><li style="list-style-type:disc">인코딩 된 문자열을 원래의 문자열로 역변환 (디코딩)</li></ul><h3 id="0dbf88ce-1e93-49e4-a694-0aa306e2c582" class="">setTimeout(func,int)</h3><ul id="711a083e-dc10-4d87-9bc7-a819cd859b1a" class="bulleted-list"><li style="list-style-type:disc">지정된 함수를 두 번째 인자로 전달된 시간 후에 실행하도록 예약한다. ( 딜레이 가능)<ul id="ba39ef26-f932-4824-bb91-973edc311e09" class="bulleted-list"><li style="list-style-type:circle"> setTimeout() 이후의 처리 로직들은 func의 실행 여부와 상관없이 즉시 실행된다.</li></ul></li></ul><h3 id="3964503a-9af3-45f4-90d1-d5ad728ed645" class="">setInterval(func, int)</h3><ul id="337fc5d1-50d8-43a9-8c3e-e09069c43432" class="bulleted-list"><li style="list-style-type:disc">지정된 함수를 두 번째 인자로 전달된 시간마다 한 번씩 호출한다. ( 타이머기능)</li></ul><ul id="b6be007c-24d5-4a0d-ab01-ae12184a847f" class="bulleted-list"><li style="list-style-type:disc">setInterval() 이후의 처리 로직들은 func의 실행 여부와 상관없이 즉시 실행된다.</li></ul><ul id="29432615-0ca5-4383-9210-0a5df13f3c96" class="bulleted-list"><li style="list-style-type:disc">타이머를 종료시킬 수 있는 timerid를 반환한다.</li></ul><ul id="2ec8868a-bd3f-4925-bb7c-99fa32ed6a67" class="bulleted-list"><li style="list-style-type:disc">이 값을 clearInterval() 함수에 전달하면 타이머 종료.</li></ul><ul id="49eff731-180a-4540-829f-481260f3e40e" class="bulleted-list"><li style="list-style-type:disc">int는 1/1000초 (ms)를 의미하는 함수<ul id="d6cbe182-2063-445e-804c-6f95f5271752" class="bulleted-list"><li style="list-style-type:circle">멀티태스킹에 이용된다.</li></ul></li></ul></div><h2 id="ece18597-e546-422f-af1d-6859ebd540f3" class=""><details open=""><summary>String 메소드</summary></details></h2><div class="indented"><p id="e48b7b62-d2a4-45b2-8d94-a22c06384f52" class="">[문자열 처리]</p><p id="2be609bc-d905-4a45-a724-21e4604141e7" class="">문자열은 그 자체가 객체.</p><p id="d1c4cc1f-db90-416f-bb88-b27c2ba91f5a" class="">객체라는 것은 그 안에 멤버변수(프로퍼티)와 메서드(함수)가 내장되어 있음을 의미</p><p id="73f09506-c2ae-4eb8-b38c-f0cf0950d8f8" class="">⇒ 일반적으로 생성하는 문자열 변수 안에는 메서드와 프로퍼티가 자동 내장 </p><p id="c0ee9f47-1c4c-4446-a8b1-10ed7737f183" class=""><strong>ex)</strong><div class="indented"><p id="c12a0573-0d0f-4d30-b5ab-9547b9f0d70c" class="">const a = “hi world”;</p><p id="c3b5d5fe-6d26-451d-b667-a71c80364e70" class="">a.메서드()</p></div></p><p id="1d121001-5f15-4c2d-990d-489c18de1c53" class="">문자열 객체에 내장된 메서드들은 변수가 담고 있는 내용을 가공하거나 특정 내용을 추출하는 기능을 갖는다. 이 기능들의 공통점은 원본 내용은 <strong>절대 변하지않고, 가공 결과를 리턴한다.</strong></p><h3 id="dddaf323-773a-4190-ad6d-32847bf65610" class=""><details open=""><summary>length</summary></details></h3><div class="indented"><p id="fb901b44-e333-40f2-9e76-8fd5f5f8cc94" class="">문자열의 글자 수를 가져온다 (공백 및 특수문자 포함)</p></div><h3 id="17e79e13-b6b8-437a-a7af-cedb1befac2c" class=""><details open=""><summary>charAt(value)</summary></details></h3><div class="indented"><p id="babed906-ca3e-4170-a5fe-7f179840f020" class="">파라미터로 설정된 위치(value)의 글자를 리턴한다</p></div><h3 id="a714c189-8467-4aa2-9f60-9d899343a105" class=""><details open=""><summary>indexOf(”str“)</summary></details></h3><div class="indented"><p id="27ca044f-72d6-4b14-8569-34bb49d3333a" class="">파라미터로 전달된 내용(str)이 처음 나타나는 위치를 리턴한다.</p><ul id="fb2a9c10-61c2-40c7-8736-e89c617acd37" class="bulleted-list"><li style="list-style-type:disc">찾지 못할 경우 -1을 반환한다.</li></ul></div><h3 id="5c0097ac-2971-4f67-918c-3bb3dfb164c5" class=""><details open=""><summary>IndexOf(”str”,value)</summary></details></h3><div class="indented"><p id="74f0a2f2-5c8d-4539-9dd5-0716781a5b0d" class="">value 위치에서 부터 파라미터로 전달된 내용(str)을 처음 찾는 위치를 리턴한다.</p><ul id="1eb6f758-bc97-416f-b28a-d5d0ee910c36" class="bulleted-list"><li style="list-style-type:disc">찾지 못할 경우 -1 반환</li></ul><p id="67d159ce-e6bb-4197-9db5-faca246e8e88" class="">
+</p></div><h3 id="de5b3d33-1ae3-4548-8a79-375f6e0fc92a" class=""><details open=""><summary>lastIndexOf(”str”)</summary></details></h3><div class="indented"><p id="51d85c34-ff28-4d01-bad7-e749e501b439" class="">파라미터로 전달된 내용(str)이 마지막으로 나타나는 위치를 리턴한다.</p><ul id="eb3d38d3-8a2e-498d-b381-8c25d43d93bd" class="bulleted-list"><li style="list-style-type:disc">문자열의 처음부터 센다.</li></ul><ul id="60e553b9-a34b-4cca-991f-eb631a235bc8" class="bulleted-list"><li style="list-style-type:disc">찾지 못할경우 -1 반환</li></ul><ul id="811df64c-68c8-4f05-b6e6-eb33fdce01e4" class="bulleted-list"><li style="list-style-type:disc">파일 확장자를 찾을 때 유용하게 사용된다.</li></ul><p id="a1153b5e-aca2-4fb2-a7aa-9cf9fd53ec76" class="">
+</p></div><h3 id="ee24be7c-887c-466c-a8c3-fb017946cf79" class=""><details open=""><summary>substring(value1,value2)</summary></details></h3><div class="indented"><p id="e3ffc5bf-ae12-4667-bbde-5319d1fad570" class="">잘라내기 위한 시작위치(value1)와 끝 위치(value2)를 파라미터로 설정한다.</p><ul id="96dcf85a-2b0b-45f2-9030-3dd4ce89dcb2" class="bulleted-list"><li style="list-style-type:disc">지정된 <strong>끝위치 직전</strong> 글자까지만 잘라낸다.</li></ul><ul id="5fd496f5-9196-4b25-9e14-a47086c812de" class="bulleted-list"><li style="list-style-type:disc">두 번째 파라미터가 없을 경우 지정된 위치부터 끝까지 자른다.</li></ul></div><p id="9478dadd-a280-4682-8d6d-4f1254ab2d80" class="">
+</p><h3 id="bfce0de3-8d24-459f-8157-14434ac6fbe4" class=""><details open=""><summary>toUpperCase()</summary></details></h3><div class="indented"><p id="3804dc8e-abf1-4891-b7f8-21fd9836d36e" class="">모든 글자를 대문자로 변환한다.</p></div><p id="da2c32e9-d970-4aac-8a57-ae094659dee7" class="">
+</p><h3 id="38011405-68d6-41aa-bead-d68fd5e5fcbe" class=""><details open=""><summary>toLowerCase()</summary></details></h3><div class="indented"><p id="0034c52a-517a-4c11-beca-79eb9b36be92" class="">모든 글자를 소문자로 변환한다.</p></div><p id="f3d31626-7dcd-4a65-aeed-0407dfd77692" class="">
+</p><h3 id="60f4b1fa-adef-4c6c-b7c2-34f92791626c" class=""><details open=""><summary>trim()</summary></details></h3><div class="indented"><p id="0f632142-52a2-414c-827b-c311854cc09e" class="">문자열의 앞/뒤 공백을 지운다.</p></div><p id="f5994eb1-bf65-4c82-a913-1b5bb786fd5f" class="">
+</p><h3 id="bbc1cac8-98a8-4e8f-890d-6c84ec12b4b3" class=""><details open=""><summary>split(”구분자”)</summary></details></h3><div class="indented"><p id="9cc60db4-1ed2-45b7-9593-feddc9fda6ba" class="">문자열에 포함된 <strong>구분자</strong>를 기준으로 문자열을 잘라 배열로 반환한다.</p></div><p id="438892a5-d71a-4e88-821a-abf19bcbbe45" class="">
+</p><h3 id="58b2b3e3-f4b0-46d5-aee5-934c016fa471" class=""><details open=""><summary>replace(”str”, “str”)</summary></details></h3><div class="indented"><p id="52f02c2a-7849-441d-9856-a5fd96b8c82b" class="">첫 번째 파라미터의 내용을 두번째 파라미터로 변경한 결과를 반환한다.</p><ul id="1b047170-1489-4b47-a323-7e6e28f9062a" class="bulleted-list"><li style="list-style-type:disc">첫 번째 파라미터와 일치하는 내용이 둘 이상 존재할 경우 첫번째 항목만 변경한다.</li></ul></div><p id="84303ba9-8d01-4966-908b-36b44379b3fe" class="">
+</p><h3 id="eb3d9d8b-1111-4ad5-8ba8-771b1ca7afd8" class=""><details open=""><summary>replaceAll(”str1”, “str2”)</summary></details></h3><div class="indented"><p id="5e0ba29d-1f41-4c02-9551-280b11b4a798" class="">첫 번째 파라미터의 내용을 두번째 파라미터로 변경한 결과를 반환한다.</p><ul id="db7aa760-ce2f-41d6-a9c3-46b768c6a590" class="bulleted-list"><li style="list-style-type:disc">모든 경우를 변경한다.</li></ul></div></div><h2 id="e3ae4693-6208-4423-aa4f-1eeedd017a9d" class=""><details open=""><summary>Math 메소드</summary></details></h2><div class="indented"><p id="06f296e9-5386-4eb9-9969-1fef558561dc" class="">수학적인 속성과 메서드를 가진 내장 객체</p><ul id="2d971edd-0ecb-4856-ba2f-b9035f3b734f" class="bulleted-list"><li style="list-style-type:disc">모든 기능이 정적 멤버변수와 정적 메서드 형태로 제공된다.<p id="08de729f-b169-4a92-b7be-5d268423b1c3" class="">⇒  즉, 객체 생성을 하지 않고 클래스 이름으로 직접 접근한다.</p></li></ul><h3 id="8b952dca-d1b3-423b-b80c-62ff7d645f9a" class=""><details open=""><summary>max( )</summary></details></h3><div class="indented"><p id="0a5b843f-cdc4-4f23-af27-35acf3fbaf4b" class="">주어진 값 중에서 최대값 (파라미터 수 제한 없음)</p></div><h3 id="b622a20d-0b34-4527-8557-559a5effba40" class=""><details open=""><summary>min()</summary></details></h3><div class="indented"><p id="362a85ee-095f-42e7-b781-237d6ac14462" class="">주어진 값 중에서 최소값 (파라미터 수 제한 없음)</p></div><h3 id="92fc6421-2733-4dc5-a345-81d5e8c04e6c" class=""><details open=""><summary>round()</summary></details></h3><div class="indented"><p id="4c3bbbad-3b6b-43b1-bcad-a144b509d624" class="">소수점 반올림</p></div><h3 id="97229bd0-d157-4f7f-87c6-e8be71a284d0" class=""><details open=""><summary>ceil()</summary></details></h3><div class="indented"><p id="9fec02e1-b9f4-4015-b923-7607d34eceee" class=""> 소수점 올림</p></div><h3 id="efbca37e-e115-4b02-b175-b1f54ccab2b2" class=""><details open=""><summary>floor()</summary></details></h3><div class="indented"><p id="d8b43401-f9e6-4c52-a082-58ca892ae5ae" class="">소수점 내림</p></div><h3 id="299f8e58-9aaf-40b5-9406-6e9939e437b5" class=""><details open=""><summary>abs()</summary></details></h3><div class="indented"><p id="68155847-7374-406e-abd5-9da90609f92d" class="">절대값을 반환</p></div><h3 id="50576e81-b240-4edc-8e10-1f2fa95ca53b" class=""><details open=""><summary>random()</summary></details></h3><div class="indented"><p id="7f8f8777-7e14-497e-a7f3-9eab16d3062b" class="">0~1 범위의 난수 반환</p><p id="a9165993-f1d7-4cca-ad49-f0f5889c991b" class="">
+</p><p id="d0d7c441-c713-431f-b509-55f9558b6bf1" class="">
+</p></div></div><h2 id="d840a375-add9-4502-885a-09bcb1c48f4f" class=""><details open=""><summary>Date 메소드</summary></details></h2><div class="indented"><p id="23a52b43-309d-4b5e-b755-987201f3f25e" class="">객체를 생성하는 순간의 시스템 시각이나 생성자 파라미터로 전달된 시각을 플랫폼에 종속되지 않는 형태로 나타낸다.</p><p id="e32470da-26b5-4f96-a7a0-17e3a8df5e41" class="">
+</p><p id="42adc707-f9e4-40b9-8672-d67b562dde83" class="">먼저 new Date()를 통해 객체를 생성하고 진행하는 것이 편하다.</p><pre id="9e0ddd07-e68d-4b28-b861-e244f3b9d074" class="code"><code>/** 객체의 생성 */
+const date1 = new Date();</code></pre><h3 id="68300fbb-7e6d-4bcf-a6f0-b4645d5ccfaf" class=""><details open=""><summary>년, 월, 일, 요일 (중요)</summary></details></h3><div class="indented"><h3 id="f2e9bf70-4514-4ba3-ba5b-416a40a5a9ea" class="">getFullYear()</h3><ul id="cd240a08-176c-455e-bce5-2726113313d7" class="bulleted-list"><li style="list-style-type:disc">년도 (4글자)</li></ul><h3 id="cf511c33-ea23-4a78-a502-5a0e221063f9" class="">getMonth() </h3><ul id="ead840ca-035c-40da-ab78-790376536593" class="bulleted-list"><li style="list-style-type:disc">달.  0은 1월, 11은 12월 보통은 getMonth()+1로 표현함</li></ul><h3 id="d6451caf-62d1-473e-be11-af79cc7847d9" class="">getDate()</h3><ul id="13752fae-23df-4536-bbfb-8563cb351874" class="bulleted-list"><li style="list-style-type:disc">일</li></ul><h3 id="e22c50a0-3733-4525-b1c7-458a8dde028e" class="">getDay()</h3><ul id="3ccae594-da6b-4372-b6bf-a384c9cb12e8" class="bulleted-list"><li style="list-style-type:disc">요일. 0 = 일요일, 6 = 토요일 값이 리턴</li></ul></div><h3 id="774ed778-aa37-4904-b07a-bac3578b44ce" class=""><details open=""><summary>시간, 분, 초  (중요)</summary></details></h3><div class="indented"><h3 id="bcdae9a7-4c6e-4639-beb7-e2546c30f864" class="">getHours()     : 시간</h3><h3 id="adbf19fd-b9af-47df-a0b3-1b1b56557c1e" class="">getMinutes()  : 분</h3><h3 id="f9845558-a5c0-4af7-977c-db733b4e5eec" class="">getSeconds()  : 초</h3><p id="8e6b63ab-6bdb-4525-9fb6-ede7dc5405c8" class="">
+</p></div><h3 id="eb04c0bf-d212-4843-86e7-d2a76f6a414f" class=""><details open=""><summary>날짜를 의미하는 문자열 반환받기</summary></details></h3><div class="indented"><p id="7b58b406-eb73-4a07-bb7d-c099fa95119c" class="">
+</p><h3 id="27b497d1-323d-4aa5-a00c-d51ba17eef3c" class=""><details open=""><summary>toDateString()</summary></details></h3><div class="indented"><p id="e3520d2b-691f-41df-b31c-404b89b6dbee" class="">날짜 부분만 나타내는, 사람이 읽을 수 있는 문자열을 반환</p></div><h3 id="e287cd1a-abb4-4807-a26c-461105351a7f" class=""><details open=""><summary>toISOString()</summary></details></h3><div class="indented"><p id="ae302c48-bd37-42ee-905c-e6e18436005f" class="">Date를 나타내는 문자열을  ISO 8601 확장 형식에 맞춰 반환</p><ul id="2f35b34b-12b8-44d0-971e-4a91e96486a1" class="bulleted-list"><li style="list-style-type:disc">ex)  2022-09-01T05:49:44.441Z</li></ul></div><h3 id="70408e6c-d42f-4b0f-96a8-702552651714" class=""><details open=""><summary>toLocaleString()</summary></details></h3><div class="indented"><p id="be2cf3ea-533a-4cb3-8dcc-e712a6d42b1f" class="">형식 문자열을 사용해서  date를 나타내는 문자열 생성</p></div><h3 id="ab171274-69ae-48ea-a0dd-15062608ddd5" class=""><details open=""><summary>toLocaleDateString()</summary></details></h3><div class="indented"><p id="aa23710c-6dd1-4eb9-92bb-49d3f21f0968" class="">Date의 날짜 부분까지 나타내는 문자열을 시스템에 설정된 현재 지역의 형식으로 반환</p></div><h3 id="da3cc3dd-5dfe-44da-a725-3a73a012a1cd" class=""><details open=""><summary>toLocaleTimtString()</summary></details></h3><div class="indented"><p id="95cc8a08-c5b0-4ff7-b855-dac7122a85ab" class="">Date의 시간 부분을 나타내는 문자열을 시스템에 설정된 현재 지역의 형식으로 반환</p></div></div><h3 id="626853a3-a92f-43a5-9c21-f766c8f6dadf" class=""><details open=""><summary>특정 날짜을 의미하는 객체 생성</summary></details></h3><div class="indented"><pre id="37614275-824f-4d90-9b74-d851d5d0614d" class="code"><code>let date2 = new Date(2021, 9, 5);</code></pre><p id="91df4b1a-0add-4211-afed-9534ec0af9ee" class="">⇒ 시각이 없으므로 자정으로 설정된다.</p><pre id="953374b7-1bc6-4c07-bdec-65b3b323c142" class="code"><code>2021. 10. 5. 오전 12:00:00</code></pre></div><h3 id="6c272ebf-8293-4fc6-9d1a-94a0677b405a" class=""><details open=""><summary>특정 시점을 의미하는 객체 생성</summary></details></h3><div class="indented"><pre id="257c57a8-d4f6-4dca-9f48-5afa406eff9b" class="code"><code>/** 특정 시점을 의미하는 객체 생성 */
+let date3 = new Date(2021, 9, 5, 21, 19, 31);
+console.log(date3.toLocaleString(&#x27;ko-KR&#x27;));</code></pre><p id="d4b37e28-6937-4020-a3e1-bf6e5ab3c207" class="">출력</p><pre id="275a55a0-3545-439e-a5e1-886c856ab293" class="code"><code>2021. 10. 5. 오후 9:19:31</code></pre></div><h3 id="8e1ab758-277e-4cb2-b75b-307ee747db7f" class=""><details open=""><summary>이미 생성된 날짜 객체의 성분 변경</summary></details></h3><div class="indented"><h3 id="be3b1fd1-1c0e-4d42-9b4d-fd00dde3dead" class="">setYear(v1)</h3><p id="e9d528bc-5bde-4b84-a25d-3874092e4740" class="">연도를 v1으로 바꾼다.</p><h3 id="73d14b2e-3495-4c23-aba0-eefef0115190" class="">setMonth(v1)</h3><p id="92b672db-e590-41ac-9cb8-693f2a0ea846" class="">달을 v1으로 바꾼다.</p><h3 id="b23184ae-0c8d-41d9-8b1b-20de267fe7b1" class="">setDate(v1)</h3><p id="40e87322-f2da-4796-b60e-33c2911428b8" class="">일을 v1으로 바꾼다.</p><h3 id="d6ca86be-e661-4b0a-808c-037116cb08f2" class="">setHours(v1)</h3><p id="1ff04d79-95d9-4b2d-b8de-349857dfb93f" class="">시를 v1으로 바꾼다.</p><h3 id="0c8fac37-d24b-4404-9fd5-4d8ea7a25de5" class="">setMinutes(v1)</h3><p id="24499601-37de-43c9-8872-2a9ddc9aeb3f" class="">분을 v1으로 바꾼다.</p><h3 id="d07a413e-0015-4a08-bf12-4ea5e35e3d65" class="">setSeconds(v1)</h3><p id="6e51cda8-b9ea-43b8-91e2-9bab4e0e99b8" class="">초를 v1으로 바꾼다.</p></div><h3 id="011dddfb-7570-418f-8189-a4d09de38770" class=""><details open=""><summary>timeStamp 확인하기</summary></details></h3><div class="indented"><p id="83f43f4c-23d8-481e-8f7c-df435633bb19" class="">timeStamp → 1970년 1월 1일 자정부터 현재까지 흐른 시간을 초단위로 환산한 값</p><h3 id="6e7db1dc-2ba4-4810-8dcc-534f99923113" class="">getTime()</h3><ul id="9c6726dd-3599-43ef-9fae-d97dc0d539f5" class="bulleted-list"><li style="list-style-type:disc">timestamp를 밀리세컨드 단위로 환산하여 반환한다.</li></ul><p id="ad747837-a2a8-44aa-90b9-f9d1f8ccfc77" class="">
+</p><p id="dcbd69b3-1ecb-426c-99d4-ede92302ca81" class="">
+</p></div><h3 id="f1488074-ff8b-4cd6-840b-6ac39b62c124" class=""><details open=""><summary>이번 달 달력만들기</summary></details></h3><div class="indented"><pre id="8974ff88-2af5-4100-8a78-55ce0126277a" class="code"><code>//  오늘날짜 객체
+const today = new Date();
+//  이번달의 1일로 이동
+today.setDate(1);
+//  이번달 1일에 대한 요일 인덱스
+const startDay = today.getDay();
+console.log(startDay);
+
+//  이번달의 마지막날은 몇일인지 구함 -&gt; 다음달의 0번째 날짜를 구함.
+const m = today.getMonth();
+today.setMonth(m+1);
+console.log(today);
+today.setDate(0);
+const lastDate = today.getDate();
+console.log(lastDate);
+console.log(&quot;&quot;);
+//  6행 7열의 빈 배열 만들기
+let data = new Array(6);
+for (let i = 0; i&lt;data.length; i++){
+    data[i] = new Array(7);
+}
+
+//  1씩 증가할 값
+let counter = 1;
+for (let i = 0 ; i&lt; data.length; i++){
+    for(let j = 0; j&lt;data[i].length; j++){
+        if(i==0 &amp;&amp; j &lt; startDay || counter &gt; lastDate){
+            data[i][j] =0;
+        }  else {
+            data[i][j] = counter++;
+        }
+    }
+}
+console.log(&quot;----------------------------------&quot;);
+for (let i = 0; i&lt;data.length; i++){
+    let str = &#x27;&#x27;;
+    for (let j=0; j&lt;data[i].length; j++){
+        str += data[i][j] == 0? &quot;\t&quot; : (data[i][j]+&quot;\t&quot;);
+    }
+    console.log(str);
+}
+console.log(&quot;----------------------------------&quot;);</code></pre></div></div><h2 id="ae032326-8a85-45df-991f-bccea44f6c2f" class=""><details open=""><summary>Number 메소드</summary></details></h2><div class="indented"><p id="bc8e33da-c5c4-45ae-bbe4-a200492b1644" class="">숫자 처리와 관련된 기본 기능들을 제공하는 내장 클래스.</p><h3 id="fa1feeee-18ea-47a7-afe5-7e6c1ba138e1" class=""><details open=""><summary>객체 생성</summary></details></h3><div class="indented"><p id="c8e4bcf9-510a-4a3e-afd1-b88836d3984d" class="">let a = new Number(123);</p><p id="735f3251-203a-4109-99f6-de6286916ff2" class="">⇒ 이런식으로 생성할 경우 a는 객체가 된다.</p></div><h3 id="f1ec6586-2a8b-42ab-abb8-e71bd22504f5" class=""><details open=""><summary>Number()함수를 통한 생성</summary></details></h3><div class="indented"><p id="2f4f3f83-adfe-4f39-99f0-a7392fbbfe77" class="">let a = Number(’123’);</p><p id="80af7394-a842-451f-9622-4eaa5d655336" class="">⇒ a는 숫자형이 된다.</p></div><h3 id="37360273-09af-4542-8828-0a500f195cd7" class=""><details open=""><summary>(정적)속성</summary></details></h3><div class="indented"><h3 id="25991fe6-e066-43f5-aef5-9f92fe10192d" class=""><details open=""><summary>Number.MAX_VALUE</summary></details></h3><div class="indented"><p id="b3fcdf8a-8793-4d04-b078-e2b2a1ea223c" class="">표현 가능한 가장 큰 양수</p></div><h3 id="43f5b65f-c5c6-46bf-9693-1c8c8f0a6158" class=""><details open=""><summary>Number.MIN_VALUE</summary></details></h3><div class="indented"><p id="2d7fcc55-181c-4995-9680-a298b15562d2" class="">표현 가능한 가장 작은 양수</p></div><h3 id="e1d7c197-6309-4466-ac91-b0750b3d3571" class=""><details open=""><summary>Number.NaN</summary></details></h3><div class="indented"><p id="20fe0fa5-c052-48db-97c9-5c1b8315dc9f" class="">숫자가 아님을 나타내는 특별한 값</p><p id="9a21e164-d460-4a68-965b-b2c15429c221" class="">⇒ ex) isNaN(Number.NaN)  ⇒ true를 return</p></div></div><h3 id="0f829989-a151-443e-8cea-59be6d3b8fbb" class=""><details open=""><summary>(정적) 메소드</summary></details></h3><div class="indented"><p id="adc457aa-d0ae-4b6d-a7bb-301dbf4ee246" class="">
+</p><h3 id="c8265bbb-de94-4ea9-8d77-c1afd26a139c" class=""><details open=""><summary>Number.isNaN(’value’)</summary></details></h3><div class="indented"><p id="6eb5a0ec-b845-4346-8367-f7385f2d87da" class="">주어진 값이 NaN인지 확인 (isNaN과 동일)</p><p id="e930e75a-693f-4163-8c21-7614903054e1" class="">숫자 변환이 불가능하면 true, 가능하면  false</p></div><h3 id="8b0a5347-0f56-4b1c-9814-55b49c709133" class=""><details open=""><summary>Number.isInteger(value)</summary></details></h3><div class="indented"><p id="19a39349-2d0c-47db-ac4f-3d94993e0c11" class="">주어진 값이 정수 인지 확인</p><ul id="083b7734-ac52-4e45-80c4-4ac8d8a3b7e8" class="bulleted-list"><li style="list-style-type:disc">ex) <p id="1c7beb8e-79d5-4176-b892-6097e9887164" class="">Number.isInteger(’123’);  ⇒ false</p><p id="934878fc-c21c-4120-8dfb-bb16d732f974" class="">Number.isInteger(123);  ⇒ true</p></li></ul></div><h3 id="7ffbec2d-a48d-4a04-a41b-8fccb455e433" class=""><details open=""><summary>Number.parseFloat(value)</summary></details></h3><div class="indented"><ul id="1f278e57-2e73-455b-82b9-6e65f2ab2713" class="bulleted-list"><li style="list-style-type:disc">주어진 값에서 변환한 부동소수점 수(실수)를 리턴<ul id="b6baead1-a581-499c-89b0-879cc99546c7" class="bulleted-list"><li style="list-style-type:circle">변환이 불가하면 NaN을 리턴</li></ul><ul id="0cca66a0-d9ef-4fcb-997f-0094d0b68323" class="bulleted-list"><li style="list-style-type:circle">ex) parseFloat(314e-2) = 3.14 </li></ul></li></ul></div><h3 id="0a3cc497-a732-4971-bfdd-ad02d6bacaac" class=""><details open=""><summary>Number.parseInt(value)</summary></details></h3><div class="indented"><ul id="5c438b50-7da7-40ba-80d2-def8c9523fce" class="bulleted-list"><li style="list-style-type:disc">value를 int<mark class="highlight-yellow">(defalut: 10)</mark>진법 수를 기준으로 10진수 값으로 변환한다.<ul id="6d9a0f18-f40a-4114-b14a-228826d4c5cd" class="bulleted-list"><li style="list-style-type:circle">변환이 불가하면 NaN을 반환</li></ul><ul id="ee77977e-e550-4168-9dd0-89c7946575e2" class="bulleted-list"><li style="list-style-type:circle">숫자 + 글자 형태의 문자열은 숫자 부분만 취함</li></ul><ul id="b3cd8ae6-2c9e-4e0f-8c9c-0868a4f7bca9" class="bulleted-list"><li style="list-style-type:circle"><strong>숫자</strong> + 글자 + 숫자 인 경우 “글자+숫자”로 문자열이 되므로 맨앞에 있는 <strong>숫자</strong>만 변환</li></ul><ul id="d6490ea4-1a4e-45fa-b749-e77bcd0c331c" class="bulleted-list"><li style="list-style-type:circle">글자 + 숫자 형태의 문자열은 변환 불가 - NaN</li></ul><ul id="e55f820c-3557-43cb-b6d3-e0ab243e860f" class="bulleted-list"><li style="list-style-type:circle">소수점을 포함할 경우 정수부분만 취한다.</li></ul></li></ul></div></div><p id="5f99d00d-008c-472e-82b5-f5082bfd5a49" class="">
+</p></div><h2 id="a40478f7-7ba7-4395-8f19-eb3c7da77b56" class=""><details open=""><summary>Regex</summary></details></h2><div class="indented"><p id="98ad982c-ebcd-491b-b767-524b21444879" class="">정규 표현식</p><p id="0e81abf9-7f65-45c0-9282-049629f02415" class="">문자열의 형식을 의미하는 수식.</p><p id="438912bc-d4d7-4025-90e6-212d656f3943" class="">문자열이 특정 조건을 충족하는지 검사하거나 특정 패턴의 문자열을 검색, 치환하기 위해 사용한다.</p><p id="1f1fa98f-b59c-4be8-b2a7-014e5963a4ef" class="">
+</p><p id="e8bd7ecd-9f13-4d6e-a81b-0a391653759a" class=""><strong>형식</strong></p><p id="c031c3cc-2992-4289-8e31-aa3c4f0c4215" class="">const 변수명 = /정규표현식/</p><p id="f483897f-2ca0-429a-ab96-77e80f805ea3" class="">변수명.test(검사할 문자열) —&gt; 문자열이 정규표현식에 부합할 경우 true를 반환</p><p id="b7340d8c-35a6-4e81-85fb-187142fd997c" class="">
+</p><p id="accb73a3-5866-42d3-8ade-aef080d79cc9" class=""><strong>한글입력 검사 형식</strong></p><pre id="e530fdb5-131a-4c0e-948c-492eaada1a05" class="code"><code>/^[ㄱ-ㅎ가-힣]*$/</code></pre><p id="704bbcd3-0846-4f34-9566-e7cff8a2807b" class=""><strong>숫자입력 검사 형식</strong></p><pre id="4e6bb78a-b472-4739-85e7-e9a07c4ce475" class="code"><code>/^[0-9]*$/</code></pre><p id="e6e6faf2-639b-410e-b29b-d7672e8ed335" class=""><strong>영문+숫자 검사 형식</strong></p><pre id="21694f3f-c617-4ab6-bf10-a6a8a697d797" class="code"><code>/^[a-zA-Z0-9]*$/</code></pre></div><h2 id="960ecfa8-d7da-4e97-8d9d-71da338cc921" class=""><details open=""><summary>Array 메소드</summary></details></h2><div class="indented"><h3 id="d20ffebf-1b11-4652-ae0b-21605bbb99f3" class=""><details open=""><summary>Array.push(v1,v2…,vn)</summary></details></h3><div class="indented"><p id="82b1fb9b-927e-4b35-962e-d003e55fccbe" class="">배열의 맨 끝에 요소를 추가한다. (파라미터 수 제한 없음)</p></div><h3 id="f928616a-7ef6-476a-a2b4-1fd217091b69" class=""><details open=""><summary>Array.pop();</summary></details></h3><div class="indented"><p id="1f51e348-a3e3-494f-934b-40016cd0c94d" class="">배열의 마지막 요소를 리턴하고 제거한다.</p></div><h3 id="cf435427-9bad-4893-a5b8-d5111402eb53" class=""><details open=""><summary>Array.shift();</summary></details></h3><div class="indented"><p id="0715a72e-362b-4f3f-9410-346d20d85a07" class="">배열의 맨 앞 요소를 리턴하고 제거한다.</p></div><h3 id="8bb9314d-4c96-4ae9-9c98-62c87c37e3cf" class=""><details open=""><summary>Array.unshift(v1,v2,…vn)</summary></details></h3><div class="indented"><p id="ffafc1c9-8ca5-4a48-9fbf-833a10414546" class="">배열의 맨 앞에 요소를 추가한다. (파라미터 수 제한 없음)</p></div><h3 id="2e5611f3-c72c-4e52-9902-53a626b4f86e" class=""><details open=""><summary>Array.splice(index,num)</summary></details></h3><div class="indented"><p id="2b53182a-f4fb-40ea-8105-1682f5443e2a" class="">index번째 위치부터 num개를 잘라서 반환하고 원본에서 제거한다.</p></div><h3 id="0a7b1a72-5aed-4f79-b199-4106887f081f" class=""><details open=""><summary>Array.splice(index,num, v1,v2,…vn)</summary></details></h3><div class="indented"><p id="d3edd8f3-4045-45f5-a522-aa6e6d1f931e" class="">index번째 위치부터 num개를 잘라서 반환하고 그 위치에 v1~vn을 배치한다.</p><ul id="289a3de3-77df-4697-8526-28f8e6450740" class="bulleted-list"><li style="list-style-type:disc">제거한 수 보다 추가되는 원소 개수가 많을 경우 배열이 확장된다.</li></ul><ul id="d2accaff-4477-4a78-86cd-ae2fcb595157" class="bulleted-list"><li style="list-style-type:disc">기존의 원소들은 뒤로 밀린다.</li></ul><ul id="d26faddf-4b60-4696-8b16-8cd347f71718" class="bulleted-list"><li style="list-style-type:disc">제거한 수 보다 추가되는 원소 개수가 적을 경우 배열이 축소 된다.</li></ul><p id="c4d02f1a-c5ed-4ba1-a8d9-7ff8fb0ed48d" class=""><mark class="highlight-pink_background">삭제할 원소의 수(num)을 0으로 지정하면 중간 삽입효과가 있다.</mark><div class="indented"><p id="dac4c2eb-5f49-49f1-89d9-194651a82c73" class="">⇒ 기존의 원소들은 뒤로 밀려난다</p></div></p></div><h3 id="8a645cdc-d7db-451c-a736-ff5c788b58b5" class=""><details open=""><summary>Array.concat(arr1,arr2)</summary></details></h3><div class="indented"><p id="a78a5b90-f488-4f04-bc71-661e1fa6f485" class="">Array에 arr1과 arr2를 결합한 새로운 배열을 반환한다.</p></div><h3 id="2c370913-fd6b-430c-9ab1-b6ec351230dd" class=""><details open=""><summary>Array.indexOf(item,from)</summary></details></h3><div class="indented"><p id="84be78c6-e255-40aa-9cf9-5608725f6e96" class="">인덱스 from부터 시작해 item(요소)를 찾는다.</p><ul id="7680cf33-85a4-4e41-a2bd-d76a33b0a8b9" class="bulleted-list"><li style="list-style-type:disc">요소를 발견하면 해당 요소의 인덱스를 반환한다.</li></ul><ul id="d89838cb-2e42-4dfe-ad4b-e113426d65d3" class="bulleted-list"><li style="list-style-type:disc">두번째 파라미터(from)이 없으면 처음부터 탐색한다.</li></ul><ul id="631d008b-7c97-415e-997d-10f874c931ce" class="bulleted-list"><li style="list-style-type:disc">item(요소)를 발견하지 못하면 -1를 반환한다.</li></ul><ul id="89f5bb4d-3a2b-4253-869b-2f223863847b" class="bulleted-list"><li style="list-style-type:disc">false를 검색하면 정확히 false만을 검색할뿐, 0을 검색하지는 않는다.</li></ul><ul id="2f800039-bf2e-4d11-97c8-d71b2dfebd70" class="bulleted-list"><li style="list-style-type:disc"> 요소를 찾을때 <strong>완전 항등 연산자 “===”</strong> 를 사용한다<p id="c2ddba53-0e9a-474c-8bab-21f81644138a" class="">⇒ NaN을 제대로 처리하지 못한다. (완전 항등 비교는 NaN에는 동작하지 않기 때문이다.)</p></li></ul></div><h3 id="628794ba-213b-4853-9f9a-2bb37d470016" class=""><details open=""><summary>Array.lastIndexOf(item,from)</summary></details></h3><div class="indented"><p id="78900c8b-e987-40f8-a10a-df27a495ea6a" class="">인덱스 from부터 시작해 item(요소)를 찾는다.</p><ul id="70faba48-04cb-42bf-a553-e2ed1f205c8e" class="bulleted-list"><li style="list-style-type:disc">요소를 발견하면 해당 요소의 인덱스를 반환한다.</li></ul><ul id="108fa8bd-11e3-4c59-a7be-f04918adf862" class="bulleted-list"><li style="list-style-type:disc">두번째 파라미터(from)이 없으면 끝부터 탐색한다.</li></ul><ul id="8f5e702b-c82d-4214-ba19-9bd984204755" class="bulleted-list"><li style="list-style-type:disc">item(요소)를 발견하지 못하면 -1를 반환한다.</li></ul><ul id="3d8e06b2-2201-40b2-8700-fbbbb1edbd8d" class="bulleted-list"><li style="list-style-type:disc">false를 검색하면 정확히 false만을 검색할뿐, 0을 검색하지는 않는다.</li></ul><ul id="0184875c-1212-4a5f-861b-2ccf2016c4de" class="bulleted-list"><li style="list-style-type:disc"> 요소를 찾을때 <strong>완전 항등 연산자 “===”</strong> 를 사용한다<p id="69fb92ac-9d5b-40f2-9a7f-05acfb31d220" class="">⇒ NaN을 제대로 처리하지 못한다. (완전 항등 비교는 NaN에는 동작하지 않기 때문이다.)</p></li></ul></div><h3 id="912bcd60-ab84-4c60-a7ee-4ccedb67a808" class=""><details open=""><summary>Array.includes(item,from)</summary></details></h3><div class="indented"><p id="2058d6df-0a02-4e3e-b18c-55c00d719d07" class="">인덱스 from부터 시작해 item이 유무를 확인한다.</p><ul id="194fca52-28c9-48ae-9f4e-fd50eb8a945e" class="bulleted-list"><li style="list-style-type:disc">해당하는 요소를 발견하면 true를 반환한다.</li></ul><ul id="0bb52c8c-c131-4142-8627-68952eaf0868" class="bulleted-list"><li style="list-style-type:disc">발견하지 못한다면 false를 반환한다.</li></ul><ul id="0bca95e7-ece5-4967-bcbe-9cd57584cbb3" class="bulleted-list"><li style="list-style-type:disc">false를 검색하면 정확히 false만을 검색할뿐, 0을 검색하지는 않는다.</li></ul><ul id="c6250b10-7c54-4b17-9e22-72e749b72392" class="bulleted-list"><li style="list-style-type:disc">NaN도 제대로 처리한다.</li></ul></div><h2 id="0e73a5b0-35b4-4a5b-9abd-cf2269175c83" class=""><details open=""><summary>배열을 탐색하는 방법</summary></details></h2><div class="indented"><h3 id="35e48f7b-8d60-44ac-bc19-aa0002c389ad" class=""><details open=""><summary>Array.forEach((element,index) ⇒ { 실행코드 })</summary></details></h3><div class="indented"><p id="0b1ff09f-8d17-4e05-82b5-c0d8505c3061" class="">배열의 모든 원소를 탐색한다.</p><ul id="6fd80e36-b705-4715-afbd-e09ee4e9dd0a" class="bulleted-list"><li style="list-style-type:disc">콜백 함수에게 배열의 값(element)과 인덱스(index)를 전달한다.</li></ul><ul id="af20eb7e-e14f-437c-859b-cd7373fae0f5" class="bulleted-list"><li style="list-style-type:disc">콜백 함수는 원소의 수 만큼 순차적으로 실행된다.</li></ul><ul id="f0067a06-67a2-47d2-ba0f-7429726b0817" class="bulleted-list"><li style="list-style-type:disc">forEach의 콜백함수에서 반복을 중단하고자 return을 사용할 경우 현재 동작중인 콜백만 종료될 뿐 전체 반복에는 영향이 없다.</li></ul><ul id="774fb6f8-0753-4530-bcfd-e31c04384b40" class="bulleted-list"><li style="list-style-type:disc">break; 사용 불가  (break는 for,while문에서만 가능, 함수 안에서는 불가능)<p id="f30e4efb-cc6c-4cbf-ac5a-e9ca10b5a79d" class="">ex)<div class="indented"><p id="d5d738a9-ef8c-4b40-a25c-7c23a44e9d21" class=""><strong>code</strong></p><pre id="927c57fd-ace1-4d76-a8e2-072bd8b88c50" class="code"><code>const arr = [10,20,30,40];
+arr.forEach((element, index) =&gt; {
+		console.log(&quot;%d번째 원소 --&gt; %d, index, element);
+});</code></pre><p id="a2165985-fa74-4619-a1a3-deac90538973" class=""><strong>출력</strong></p><pre id="4d360db4-5512-41f9-9005-aac0dd8a6a75" class="code"><code>0번째 원소 --&gt; 10
+1번째 원소 --&gt; 20
+2번째 원소 --&gt; 30
+3번째 원소 --&gt; 40</code></pre><h3 id="b8c7fdd4-5cbc-43ac-9f28-58b2a6ea5ad1" class=""><details open=""><summary>Array.some((element, index) ⇒ { 실행코드 })</summary></details></h3><div class="indented"><p id="0265f66a-a9a2-46bd-946c-2c2afbcf188e" class="">탐색을 중단하는 기능을 제공한다.</p><ul id="1e8130df-2278-4850-9c12-10411808131e" class="bulleted-list"><li style="list-style-type:disc">콜백함수가 true를 리턴하는 순간 순환을 중단한다.</li></ul><p id="b6247fae-c22c-4c33-b6c8-5adab5993eb6" class=""><strong>code</strong></p><pre id="42f34db8-aa24-4d6e-95b9-bc4612807fbf" class="code"><code>const arr3 = [10,20,30,40,50];
+arr3.some((element,index) =&gt; {
+	if(i==3) {
+		console.log(&#x27;--반복중단--&#x27;);
+		return true;
+	}
+	console.log(&quot;[%d]번째 원소 --&gt; %d&quot;, index, element);
+});</code></pre><p id="ecd6973e-9608-4312-a0ab-5707af737781" class=""><strong>출력</strong></p><pre id="c18d9998-e69c-419c-bca0-41d8d8ba70ee" class="code"><code>[0]번째 원소 --&gt; 10
+[1]번째 원소 --&gt; 20
+[2]번째 원소 --&gt; 30
+--반복중단--</code></pre></div></div></p></li></ul></div></div><h2 id="a1f6db17-20e7-4a01-b486-ec04d034a2b9" class=""><details open=""><summary>배열의 원소를 가공하여 새로운 배열 만들기</summary></details></h2><div class="indented"><h3 id="2d7e1adb-4d03-4f33-9c22-1fb9e63067a7" class=""><details open=""><summary>Array.map((element,index) ⇒ {실행코드})</summary></details></h3><div class="indented"><p id="f15b4770-a5ed-4599-83b9-e710034ee156" class="">map함수에 전달된 콜백이 리턴하는 값들을 하나의 배열로 묶어서 <mark class="highlight-orange_background">다른 배열(A)</mark>에 저장.</p><p id="c2074ba8-f93b-44c2-bd46-a3f9eb5e03e9" class=""><mark class="highlight-orange_background">다른 배열(A)은 </mark>반드시  원본배열(Array)와 <strong>같은 길이를 갖는 배열</strong>이여야 한다.</p><p id="b0b97994-e604-422a-8c92-fabcb22d27e4" class="">return하지 않은 index에 대한 원소는 undefined가 된다.</p><p id="e0e1a4ad-44a7-47c0-a733-d4362b123384" class="">ex)<div class="indented"><p id="8c664f5e-64c9-4049-90e3-5c5130d493ef" class=""><strong>code</strong></p><pre id="be9a9bd8-c810-47c0-9bca-1645ecfcc369" class="code"><code>const arr4 = [10, 20, 30, 40, 50];
+const hello = arr4.map((element, index) =&gt; {
+    return element * 10;
+});
+console.log(hello);</code></pre><p id="3d58541e-0a9c-40a0-ad67-b815571d1b63" class=""><strong>출력</strong></p><pre id="8247bdc9-58de-4e29-b1cf-1e8e002d397b" class="code"><code>[ 100, 200, 300, 400, 500 ]</code></pre></div></p><p id="08a62df8-1dad-40e3-bb1d-291c2d42526e" class="">
+</p><p id="dc129c8f-f894-4af4-9f9f-63914ef87555" class="">화살표 함수(=&gt;)는 처리로직이 한줄인 경우 “{ }” 와 “ ; “ , “return” 키워드가 생략 가능</p><p id="cba7222e-cb53-4eb9-a22c-5930ef4760c4" class=""> ex)<div class="indented"><p id="0546aac2-e4ca-4d36-a29c-1c21bd3d4d82" class=""><strong>code</strong></p><pre id="bcb862a7-c0d8-46e0-8c77-2fd46bc04a16" class="code"><code>const arr5 = [10,20,30,40,50];
+const world = arr5.map((element, index) =&gt; element*10);
+console.log(world);</code></pre><p id="acd17b0f-af94-479d-8285-9734cdf54cd7" class=""><strong>출력</strong></p><pre id="f8721d77-23b0-4a9f-a08a-606b5a1c14e2" class="code"><code>[ 100, 200, 300, 400, 500 ]</code></pre></div></p></div></div><h2 id="887aa531-f970-4136-ac18-481c2b7b2334" class=""><details open=""><summary> 배열 검색</summary></details></h2><div class="indented"><h3 id="ab4d24cd-6610-45ed-8198-00239e6721fe" class=""><details open=""><summary>Array.find( function (element)  { 함수내용 })</summary></details></h3><div class="indented"><p id="73b25cd8-db37-4fe9-8a74-0371f6d5ec8f" class="">주어진 판별함수를 만족하는 첫번째 값을 반환한다. 못찾으면 undefined를 반환한다.</p><p id="ab6b1f86-5e92-4fcb-8612-9448f74d6338" class="">찾고자 하는 항목이 아닌 검색 규칙을 구현한 콜백함수를 전달해야 한다.</p><p id="b6a025cd-57d9-48e0-a788-88f8f9469db1" class="">ex)<div class="indented"><p id="f74fbabf-4072-4ef8-9d2e-d4422e6c777a" class=""><strong>code</strong></p><pre id="e93ac591-6766-4f43-aa99-6ee0c40f6e99" class="code"><code>const arr6 = [5,12,8,131,44];
+const found = arr6.find(function(element) {
+    // 파라미터로 전달되는 element는 배열의 모든 원소가 순차적으로 전달된다.
+    //console.log(element);
+
+    //  element를 우리가 원하는 조건에 충족하는지 검사하여 true/false 리턴
+    //  true를 리턴하는 순간 배열의 탐색을 중단. (break와 동일 기능)
+    if (element%2==0){
+        //  true가 리턴되는 경우 element는 found에 저장된다.
+        return true;
+    } else {
+        //  false가 리턴되는 경우 element는 버려진다.
+        return false;
+    }
+
+});
+console.log(found);</code></pre><p id="9e23544d-dc0a-4bc9-96ad-6e3ef3f4e9dd" class=""><strong>출력</strong></p><pre id="f692e843-c652-4b65-aeff-516bff74c76f" class="code"><code>12</code></pre></div></p></div></div><h2 id="23c8b917-41d1-441b-bb4b-73fbee6cbf0a" class=""><details open=""><summary>배열에서 특정 조건 충족하는 원소 추출</summary></details></h2><div class="indented"><h3 id="3af98e51-ab5d-45cc-950c-bdc7f262bdf8" class=""><details open=""><summary>Array.filter(element =&gt; 조건식);</summary></details></h3><div class="indented"><p id="e121b736-f0d7-49af-b51e-9cf387335d4c" class="">조건이 true일 경우에만 element들을 반환</p><pre id="cdb18167-3536-4dc2-90f0-9c9710603abe" class="code"><code>arr = Array.filter(element =&gt; 조건식);
+조건식이 true일 경우에만 Array의 element들이 arr에 들어간다.</code></pre></div><h3 id="2375c424-987f-42d9-ab66-e0b46bffa920" class=""><details open=""><summary>Array.filter( function (element, index, arr) { 조건문에 따른 return}</summary></details></h3><div class="indented"><p id="2141a54b-2b20-40f3-9a6d-3c17c9f02bf5" class="">ex)<div class="indented"><p id="b45f47c3-2ad6-408a-93bf-a73225839e56" class=""><strong>code</strong></p><pre id="5737e678-b294-4298-ac4f-c7731a1d63a6" class="code"><code>const arr33 = [5,12,8,131,44];
+const results = arr33.filter(function (element, index, arr) {
+    console.log(&quot;element = %d, index = %d, arr = %s&quot;, element, index, arr);
+    if (element % 2 ==0){
+        //  true가 리턴되는 경우 element 는 results 배열의 원소로 저장된다.
+        //  true를 리턴하더라도 배열의 모든 원소를 탐색하기 전까지는 종료되지 않는다.
+        return true;
+    } else {
+        //false가 리턴되는 경우 element는 버려진다.
+        return false;
+    }
+});
+console.log(&quot;filter 함수 결과&quot;);
+console.log(results);</code></pre><p id="411823a0-9bbc-4721-87c7-f01b85b81252" class=""><strong>출력</strong></p><pre id="8b3fd382-22ce-487e-aa37-6a7c9a320eab" class="code"><code>filter 함수 결과
+[ 12, 8, 44 ]</code></pre></div></p></div></div><h2 id="2682908b-37b2-4c12-a42e-d072a8a8052f" class=""><details open=""><summary> 배열 정렬</summary></details></h2><div class="indented"><h3 id="5e056406-409f-4138-a453-f04a5731f934" class=""><details open=""><summary>Array.sort()</summary></details></h3><div class="indented"><p id="5a025880-49b8-455f-8721-dbd8db0fcf0e" class="">퀵정렬 알고리즘을 사용하여 배열 자체를 정렬한다.</p><p id="5d744c88-8427-46e9-b368-6114e89a1853" class="">⇒ 배열의 모든 원소를 문자열로 취급하기 때문에 글자 정렬기준이 적용된다.</p><p id="41692a4a-613b-4d4b-a735-26ea0fea419a" class="">정렬조건을 콜백함수로 처리한다.</p><h3 id="66a9fba9-5e9e-4e47-8874-2699592d70f5" class=""><details open=""><summary>sort함수를 이용한 오름차순</summary></details></h3><h3 id="c848ee2e-90c2-470c-81f2-2bccd7b58ddc" class=""><details open=""><summary>sort함수를 이용한 내림차순</summary></details></h3><div class="indented"><p id="b29ba7c3-512b-4bee-a1d8-92c62994976a" class=""><strong>code</strong></p><pre id="a8f1a823-4e8e-4994-860f-67f1b5211594" class="code"><code>const Array2 = [2,1,15];
+Array2.sort(function (a,b) {
+	console.log(&quot;a=%s, b=%s&quot;, a,b);
+	return b - a;
+});
+console.log(Array2);</code></pre><p id="a4173145-47f7-4788-984b-ab1d785c3cf8" class=""><strong>출력</strong></p><pre id="18ec6e49-aa91-4532-b7cb-d5ddf89e3d5e" class="code"><code>a=15, b=1
+a=15, b=1
+a=15, b=2
+[ 15, 2, 1 ]</code></pre></div></div><h3 id="4da3bb17-6167-4935-9cd7-fad28325802a" class=""><details open=""><summary>Array.reverse()</summary></details></h3><div class="indented"><p id="19ce8058-5050-411d-bfe7-7eeb8cdbbce2" class="">배열을 역순 배치한다.</p><p id="dec01dec-20d5-4d21-a2cd-4e5087bb345c" class=""><strong>code</strong></p><pre id="59bcb552-7b49-4975-8642-dcc103c0dc30" class="code"><code>let arr11 = [1,2,3,4,5];
+arr11.reverse();
+console.log(arr11);</code></pre><p id="8b4e118b-ae06-4113-994f-337684f3693b" class="">출력결과</p><pre id="2c1d31ef-edf2-499b-a4cc-9de48bc3cec3" class="code"><code>[ 5, 4, 3, 2, 1 ]</code></pre></div></div></div></div></article></body></html>

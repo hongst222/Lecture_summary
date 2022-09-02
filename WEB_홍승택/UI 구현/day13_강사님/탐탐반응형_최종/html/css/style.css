@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+/* 초기화 */
+* {margin: 0; padding: 0; border: 0;}
+ul {list-style: none;}
+a {text-decoration: none;}
+body {font-family: 'Noto Sans KR', sans-serif;}
+
+/* 공통 wrapper */
+.center_wrap {width: 100%; background-color: rgba(0,0,0,.1); padding: 0 15px; box-sizing: border-box;}
+.center_wrap h2 {margin-bottom: 24px; font-size: 26px; font-weight: normal;}
+.center_wrap h2 span {font-weight: 900;}
+
+/* 헤더 */
+#header {width: 100%; height: 126px; background: rgba(255,0,0,.1); position: fixed; left: 0; top: 0; z-index: 9999;}
+#header .center_wrap {padding-top: 7px; box-sizing: border-box; position: relative;}
+#top_logo {width: 47px; height: 47px; margin: auto;}
+#top_logo img {width: 100%;}
+#m_menu_btn {width: 30px; height: 30px; background-color: rgba(0,0,0,.1); position: absolute; left: 15px; top: 15px; text-align: center;}
+#m_basket_btn {width: 30px; height: 30px; background-color: rgba(0,0,0,.1); position: absolute; right: 15px; top: 15px; text-align: center;}
+#m_menu_btn a,
+#m_basket_btn a {color: #000; font-size: 20px;}
+#m_menu_btn span,
+#m_basket_btn span {display: block; text-indent: -9999px;}
+#m_smile_btn {width: 100%; position: absolute; left: 0; top: 60px;}
+#m_smile_btn img {width: 100%;}
+
+
+/* 메인 비주얼 영역 */
+#main_visual {width: 100%; /*height: 548px;*/ height: 0; background: url("../img/visual_img_m.jpg") no-repeat center /contain; padding-bottom: calc(1144/750*100%); margin-top: calc(140/750*100% + 60px);}
+#main_visual p {text-indent: -9999px;}
+/* 모바일 비주얼 이미지 사이즈 750*1144 */
+/* 반응형 백그라운드 이미지 만들기
+브라우저의 너비에 맞게 이미지 사이즈가 늘어날 수 있게 하기 위해 width값을 100%로 작성
+만약 원래 가지고 있는 이미지의 크기보다 커지지 않게(깨지지 않게) 하려면 img 태그에 max-width: 이미지 원래 너비; or max-width: 100%;
+현재는 이미지가 작기 때문에 그냥 늘려서 사용.
+
+height는 0으로 작성, 대신 padding-bottom 또는 padding-top 속성을 이용해 백그라운드 이미지가 들어가 크기를 비율로 계산해서 넣어준다.
+padding-bottom: 백그라운드 세로 너비 / 가로 너비 * 100%;
+calc() 속성을 이용, 자동으로 수식을 계산해주는 CSS3 속성
+padding-bottom(top) 속성의 값이 가로 너비를 기준으로 세로 너비를 설정
+ */
+
+
+
+/* 공지사항 */
+#notice {width: 100%; height: 60px; background: rgba(0,0,255,.1);}
+#notice_box {width: 100%; height: 100%; background: url("../img/notice_icon.png") no-repeat left 14px; padding-left: 50px; box-sizing: border-box; font-size: 14px; overflow: hidden;}
+#notice_box ul li {line-height: 60px;}
+#notice_box ul li:nth-child(2) {display: none;}
+.notice_recent_title {/*width: 163px;*/
+    width: calc(100% - 89px);
+    /* 날짜와 +버튼의 너비는 고정시켜놓고 나머지 영역을 채우게끔 설정
+    타이틀 박스만 고정크기를 뺀 나머지 영역을 채우면서 늘어나거나 줄어들 수 있도록 함! */
+    float: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.notice_recent_date {width: 72px; float: left;}
+.notice_recent_more {width: 17px; float: left;}
+
+
+/* 탐앤탐스 메뉴 */
+#toms_menu {width: 100%; /*height: 630px;*/ background: rgba(255,0,255,.1); text-align: center; padding: 70px 0 80px; box-sizing: border-box;}
+#toms_menu ul li {width: 100%;}
+.toms_menu_slide_img img {width: 100%; margin-bottom: 38px;}
+.toms_menu_slide_caption {font-size: 18px;}
+#toms_menu ul li:nth-child(2),
+#toms_menu ul li:nth-child(3) {display: none;}
+
+
+/* 탐앤탐스 소개 */
+#toms_about {width: 100%; /*height: 620px;*/ background: url("../img/toms_about_bg_m.jpg") no-repeat bottom /cover; text-align: center; padding-top: 70px; box-sizing: border-box;}
+#toms_about .center_wrap {min-height: 600px;}
+/* min-height: 최소 너비 속성. 이 크기보다는 더 줄어들지 않음. */
+h2.toms_about_title {font-size: 18px;}
+h2.toms_about_title span {font-size: 26px;}
+.toms_about_cont {font-size: 14px; line-height: 1.8; margin-bottom: 50px;}
+#toms_about_btn {width: 300px; margin: auto;}
+#toms_about_btn ul li {width: 145px; height: 45px; background-color: rgba(0,0,0,.1); float: left;}
+#toms_about_btn ul li:first-child {width: 300px; margin-bottom: 10px;}
+#toms_about_btn ul li:nth-child(2) {margin-right: 10px;}
+#toms_about_btn ul li a {width: 100%; height: 100%; display: block;text-align: center; line-height: 45px; font-size: 18px; font-weight: bold; background-color: #ece0db; color: #572a31; border: 1px solid #572a31; box-sizing: border-box;}
+#toms_about_btn ul li a#branch_btn {background-color: #572a31; color: #fff;}
+
+
+/* MD상품 */
+#toms_md {width: 100%; /*height: 600px;*/ background: rgba(0,255,255,.1); text-align: center; padding: 70px 0 40px; box-sizing: border-box;}
+#toms_md ul li {width: 100%;}
+.mdp_slide_img img {width: 100%; margin-bottom: 38px;}
+.mdp_slide_caption {font-size: 18px;}
+#toms_md ul li:nth-child(2),
+#toms_md ul li:nth-child(3) {display: none;}
+
+
+/* 인스타그램 */
+#toms_sns {width: 100%; /*height: 610px;*/ background: rgba(0,255,0,.1); text-align: center; padding: 35px 0 80px; box-sizing: border-box;}
+#toms_sns .center_wrap {overflow: hidden;}
+#toms_sns ul li {width: calc(100%/3); /*height: 100px;*/
+    padding-bottom: calc(100%/3); float: left; position: relative;}
+    /* width가 %단위로 가변적일 때 width에 따라서 높이도 함께 동일한 비율로 변경될 수 있도록 가변 크기 박스를 만들 경우 height 대신 padding-bottom속성에 %값을 준다. (width와 동일한 수치로 줬을 때 정사각형) */
+#toms_sns ul li img {width: 100%; height: 100%;
+    object-fit: cover;
+    /* object-fit: background-size속성과 비슷하게 img 또는 video 태그를 block속성의 태그에 넣었을 때 비율이 안맞는 경우 채우는 방식을 변경해주는 속성.(CSS3. IE 적용X) */
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* img태그와 li의 padding값이 겹쳐질 수 있도록 position을 absolute로 설정, 부모요소에게 position: relative를 설정 */
+}
+
+
+/* 고정 버튼(챗봇, 맨위로) */
+#chatbot {width: 80px; height: 80px; position: fixed; right: 10px; bottom: 105px;}
+#chatbot img {width: 100%;}
+#gotop {width: 45px; height: 45px; position: fixed; right: 10px; bottom: 50px;}
+#gotop a {width: 45px; height: 45px; display: block; background: rgba(0,0,0,.8); color: #fff; text-align: center; line-height: 45px; font-size: 20px;}
+#gotop a:hover {background: #000;}
+#gotop a span {display: block; text-indent: -9999px;}
+
+
+
+/* 푸터 */
+#footer {width: 100%; /*height: 580px;*/ background: rgba(255,0,0,.1); padding: 50px 0; box-sizing: border-box;}
+#footer h3 {font-size: 14px; font-weight: normal;}
+
+#follow {margin-bottom: 30px;}
+#follow h3 {float: left; margin-right: 10px; line-height: 30px;}
+#follow ul li {width: 30px; height: 30px; float: left; margin-right: 7px;}
+#follow ul li img {width: 30px; height: 30px;}
+#follow::after {content: ""; display: block; clear: both;}
+
+#language {margin-bottom: 30px;}
+#language ul li {display: inline-block; margin-right: 5px;}
+#language ul li a {color: #000; letter-spacing: -1px; font-weight: bold;}
+
+#customer {margin-bottom: 30px;}
+#customer a {color: #572a31; font-size: 26px; font-weight: 300; letter-spacing: -1px;}
+
+#fnb {margin-bottom: 40px;}
+#fnb ul li {font-size: 14px; float: left; line-height: 1.8;}
+#fnb ul li::after {content: "·"; margin: 0 5px;}
+#fnb ul li a {color: #572a31;}
+#fnb::after {content: ""; display: block; clear: both;}
+#fnb ul li:nth-child(4),
+#fnb ul li:nth-child(7) {clear: both;}
+/* 4번째, 7번째 요소에서 줄바꿈 해주기 위해 clear: both 처리 */
+#fnb ul li:nth-child(3)::after,
+#fnb ul li:nth-child(6)::after,
+#fnb ul li:last-child::after {content: "";}
+/* 3번째, 6번째, 마지막번째 요소의 뒤에 있는 점을 없애주기 위해 content속성에 빈 문자열을 입력 */
+
+#company {margin-bottom: 20px; font-size: 12px; font-style: normal; line-height: 1.6; color: #8a8a8a;}
+#company span {margin-right: 10px;}
+/* address태그(시맨틱태그)는 기본적으로 이탤릭체로 설정 되어있음. */
+
+#copyright {font-size: 12px; color: #8a8a8a;}

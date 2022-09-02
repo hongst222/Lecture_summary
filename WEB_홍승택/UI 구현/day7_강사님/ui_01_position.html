@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position 속성</title>
+    <style>
+        /* 
+        position: absolute;
+        절대위치좌표를 사용해 요소를 배치
+        top, right, bottom, left (기준점) 속성을 함께 사용해 위치를 지정할 수 있다.
+        요소를 스티커처럼 부모요소(현재는 웹페이지)의 원하는 곳에 붙여준다.
+
+        position: relative;
+        상대위치좌표를 사용해 요소를 배치
+        top, right, bottom, left 속성으로 원래 있던 위치(position: static; 상태로 기본 지정된 위치)를 기준으로 원하는 만큼 위치를 이동시킴.
+
+        z-index 속성 : 요소의 앞뒤 순서(깊이) 결정(음수, 양수 사용 가능, 범위는 무한대)
+        요소의 앞뒤 순서는 변경해주기 전까지는 요소를 입력한 순서대로 나중에 입력한 것이 위로 올라감.
+        그래서 항상 가장 위에 위치해야 하는 것들
+        (ex1 : 내비게이션에 마우스를 올렸을 때 서브메뉴가 나타나는 경우
+        ex2 : 레이어 팝업)
+        z-index 값을 9999999 이렇게 입력하기도 함.
+        한 페이지 내에 요소가 몇 개가 들어갈지 모르기 때문에 추후에 수정이나 추가가 되더라도 가장 위에 올라올 수 있게하기 위함.
+        **z-index 속성은 position 속성이 지정되어야만 사용 가능(의미가 있다) static 제외
+
+        position: absolute; 속성은 부모요소 기준(현재는 부모요소가 body이기 때문에 웹 페이지가 기준이다.) => 스크롤 내리면 밀려올라감
+        position: fixed; 속성은 웹브라우저(창) 기준 => 스크롤 내려도 고정
+
+        */
+        
+        .box {width: 100px; height: 100px; position: absolute;}
+        .red {background-color: red; left: 0; top: 0; z-index: 1;}
+        .green {background-color: green; left: 50px; top: 50px; z-index: 0;}
+        .blue {background-color: blue; left: 100px; top: 100px; z-index: -1;}
+        .fixed {width: 100px; height: 100px; background-color: yellow; position: fixed; right: 50px; bottom: 50px;}
+    </style>
+</head>
+<body>
+    <div class="box red"></div>
+    <div class="box green"></div>
+    <div class="box blue"></div>
+    <div class="fixed"></div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

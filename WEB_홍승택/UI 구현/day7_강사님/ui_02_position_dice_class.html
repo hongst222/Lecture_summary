@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="wclassthdotce-wclassthdottial-scale=1.0">
+    <title>주사위만들기</title>
+    <style>
+        /* 자식요소가 부모요소를 기준으로 위치를 잡을 수 있게 설정하려면 부모요소에게 position:relative; 속성을 적용해야 한다.(만약 부모한테 relative가 없을 경우 더 상위의 relative가 적용된 부모요소를 기준으로 함.) */
+        * {margin: 0; padding: 0;}
+
+        .box {width: 300px; height: 300px; background-color: cadetblue; border-radius: 30px; position: relative;}
+        .dot {width: 80px; height: 80px; background-color: antiquewhite; position: absolute; border-radius: 50%;}
+
+        .left15 {left: 15px;}
+        .top15 {top: 15px;}
+        .right15 {right: 15px;}
+        .bottom15 {bottom: 15px;}
+        .left110 {left: 110px;}
+        .top110 {top: 110px;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="dot left110 top110"></div>
+    </div>
+    <div class="box">
+        <div class="dot left15 top15"></div>
+        <div class="dot right15 bottom15"></div>
+    </div>
+    <div class="box">
+        <div class="dot left15 top15"></div>
+        <div class="dot left110 top110"></div>
+        <div class="dot right15 bottom15"></div>
+    </div>
+    <div class="box">
+        <div class="dot left15 top15"></div>
+        <div class="dot left15 bottom15"></div>
+        <div class="dot right15 top15"></div>
+        <div class="dot right15 bottom15"></div>
+    </div>
+    <div class="box">
+        <div class="dot left15 top15"></div>
+        <div class="dot left15 bottom15"></div>
+        <div class="dot left110 top110"></div>
+        <div class="dot right15 top15"></div>
+        <div class="dot right15 bottom15"></div>
+    </div>
+    <div class="box">
+        <div class="dot left15 top15"></div>
+        <div class="dot left15 bottom15"></div>
+        <div class="dot right15 top15"></div>
+        <div class="dot right15 bottom15"></div>
+        <div class="dot left15 top110"></div>
+        <div class="dot right15 top110"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+[CSS로 모양 만들기 참고]
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=jsy930609&logNo=221389876987
+
+https://blog.munilive.com/posts/css3-simple-shapes-cheat-sheet.html
+
+https://www.land-of-web.com/freebies/css3-simple-shapes-cheat-sheet.html
+
+[CSS 그라디언트 사이트]
+'css 그라디언트' 검색
+https://cssgradient.io/
+https://www.colorzilla.com/gradient-editor/
+https://mycolor.space/gradient
+https://uigradients.com/
+
+[transition-timing-function 큐빅베지어 사이트]
+https://cubic-bezier.com/
+
+[벤더프리픽스(브라우저 접두사) 안쓸 수 있게 해주는 스크립트]
+http://projects.verou.me/prefixfree/
+
+[웹폰트 사이트]
+구글폰트
+https://fonts.google.com/
+
+눈누(한글 상업적 무료 폰트 사이트)
+https://noonnu.cc/
+
+웹폰트 변환 사이트
+https://transfonter.org/

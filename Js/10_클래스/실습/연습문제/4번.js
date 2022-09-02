@@ -46,7 +46,7 @@ class Account {
     withdraw(long_amount){
         if(long_amount<this.balance){
             this.balance -=long_amount
-            console.log(`${long_amount}원을 출금하였습니다. 잔액: ${this.#balance}`);
+            console.log(`${long_amount}원을 출금하였습니다. 잔액: ${this.balance}`);
         } else {
             console.log(`출금하려는 돈: ${long_amount}, 잔액: ${this.balance}`);
             console.log("잔액이 부족합니다.");

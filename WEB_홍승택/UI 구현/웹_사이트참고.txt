@@ -1,0 +1,84 @@
+CSS선택자 공부하기 좋은 사이트
+https://flukeout.github.io/
+
+HTML, CSS, JS 등 공부 사이트
+W3C에서 운영하는 html 및 css 사이트
+https://www.w3schools.com/
+http://www.tcpschool.com/
+https://opentutorials.org/course/1
+
+코드 적용 및 테스트 사이트
+http://codepen.io
+
+html, css 등 지원여부 확인 사이트
+https://caniuse.com/
+
+오디오, 비디오 등 파일 변환 사이트
+https://convertio.co/kr/
+
+CSS 그라디언트 사이트
+https://uigradients.com/
+https://cssgradient.io/
+
+CSS로 모양 만들기
+https://css-tricks.com/the-shapes-of-css/
+
+상업적 용도 사용 가능한 무료 폰트 사이트
+https://noonnu.cc/
+
+영문 폰트 무료 사이트
+(★상업적 용도로 사용 시 꼭 라이센스 확인할 것!!!)
+https://www.dafont.com/
+
+온라인 웹폰트 변환 사이트
+https://transfonter.org/
+
+flexbox 연습 사이트
+https://flexboxfroggy.com/
+
+파비콘 제작 사이트
+http://favicon-generator.org
+
+와이어프레임 / 플로우차트 / 프로토타입 등 만들 수 있는 사이트
+https://www.figma.com/
+https://ovenapp.io/
+https://www.diagrams.net/
+https://miro.com/
+
+폴더구조 예시
+[2일차]
+   -[반응형웹03]
+   -[반응형웹04]
+        -[작업] (psd, txt, ai.... 웹에서 사용하지 않을 원본 파일 및 자료 등)
+        -[html] (웹에 업로드 할 파일들만 넣어놓기)
+             -[css]
+             -[img]
+             -[js]
+             -index.html
+
+
+FTP 업로드 방법
+파일질라 또는 알드라이브 등의 "FTP프로그램" 설치
+호스트 : 호스팅ID.dothome.co.kr
+ID : 호스팅ID
+PW : FTP비밀번호
+포트 : 21(기본값)
+html 폴더의 직하위에 index.html이 꼭 있어야 함!!
+호스팅ID.dothome.co.kr 으로 접속하면 index 화면이 나타납니다.
+
+
+vertical-align 속성 정리
+https://codepen.io/kme6918/pen/JOZyEv
+
+웹사이트 디자인 수상 사이트
+https://www.gdweb.co.kr/ (국내 최다)
+https://www.awwwards.com/ (해외)
+
+폰트어썸 (웹폰트 아이콘) 사이트
+https://fontawesome.com/
+강사 Kit 라이브러리
+<script src="https://kit.fontawesome.com/f0e73cfa04.js" crossorigin="anonymous"></script>
+
+디바이스 사이즈 및 미디어쿼리 확인 사이트
+https://yesviz.com/devices.php
+
