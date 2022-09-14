@@ -1,40 +1,25 @@
-id_list1 = ["muzi", "frodo", "apeach", "neo"];
-report1 = [
-    "muzi frodo",
-    "frodo muzi",
-    "frodo neo",
-    "muzi neo",
-    "apeach muzi"
-];
-
-id_list2 = ["ryan", "con"];
-report2 = [
-    "ryan con",
-    "ryan con",
-    "ryan con",
-    "ryan con"
-];
-k = 2;
-function solution(id_list, report, k) {
-    userList = id_list.reduce((list,id) => {
-        list[id] = [0, [] ];
-        return list;
-    },{});
-
-    for(const z of report){
-        const[REPORTER,REPORTED] = z.split(' ');
-        userList[REPORTER][1].push(REPORTED);
-        userList[REPORTED][0]++;
-    }
-
-    const bannedUser = id_list.filter(id => userList[id[0]] >=k);
-
-    const emailLog = id_list.map(id => {
-        userList[id][1].filter(reportedId => bannedUser.includes(reportedId)).length;
-    });
+function solution(clothes) {
+    const map = new Map();
     
-    return emailLog;
+    clothes.forEach((e,i) => {
+        map.set(e[1], (map.get(e[1])|0) + 1);
+    });
+
+    let arr = Array.from(map.keys());
+    console.log(arr);
+    
+    let sum = 0;
+    let mul = 1;
+    arr.forEach((e,i) => {
+        let a =map.get(e)
+        sum += a;
+        mul *= a;
+    });
+    return map.size != 1 ? sum+mul : sum; 
+
 }
 
-solution(id_list1,report1,k);
-solution(id_list2,report2,k);
+clothes1 = [["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]];
+clothes2 = [["crow_mask", "face"], ["blue_sunglasses", "face"], ["smoky_makeup", "face"]];
+
+console.log(solution(clothes1));

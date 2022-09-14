@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="time"></div>
+
+    <script>
+        const timer = document.querySelector('.time');
+        
+        
+        function timeFunc() {
+            const date = new Date();
+            
+            let arr = [date.getFullYear(),date.getMonth()+1,date.getDate(),date.getHours(),date.getMinutes(),date.getSeconds()];
+            arr =arr.map(e => e<10? '0'+ e : e );
+            let printTime = (`${arr[0]}-${arr[1]}-${arr[2]} ${arr[3]}:${arr[4]}:${arr[5]}`);
+            
+            timer.innerHTML = printTime;
+        }
+        setInterval(() => {
+            timeFunc();
+        },1000);
+        
+
+    </script>
+    
+</body>
+</html>

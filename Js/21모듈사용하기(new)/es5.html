@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ES5 style 모듈 사용</h1>
+    <!-- 기본적으로 <script>태그는 분리되어 있어도 코드가 연동된다. -->
+    <!-- <script> 태그의 type 특성은 기본값이 text/javascript이므로 생략 가능-->
+    <script>
+        const x = 100;
+    </script>
+
+    <script>
+        const y = 200;
+    </script>
+
+    <script>
+        console.log(x+y);
+    </script>
+
+    <!-- 다른 모듈 파일을 참조할 경우 <script> 태그에 src 속성으로 모듈의 경로를 명시-->
+    <!-- 별도의 import 처리는 필요 없음-->
+    <!-- src속성을 갖는 script 태그는 내부에 소스코드를 포함할 수 없다.-->
+
+    <script src="es5/MyModule1.js"></script>
+    <script src="es5/MyModule2.js"></script>
+    <script src="es5/MyModule3.js"></script>
+    <script src="es5/MyModule4.js"></script>
+    
+    <!-- <script> 태그는 연속성을 갖기 때문에 모듈을 활용하는 코드는 별도의 script 태그를 작성해야 한다.-->
+    <script>
+        console.group("MyModule1");
+        helloWorld();
+        console.groupEnd();
+
+        console.group("MyModule2");
+        console.log(name)
+        say();
+        console.log(property.id);
+        console.log(property.type);
+        console.log(home.postcode);
+        console.log(home.address);
+        home.getAddress();
+        console.groupEnd();
+
+        console.group("MyModule3");
+        const my = new MyClass();
+        my.say();
+        console.groupEnd();
+
+        console.group("MyModule4");
+        const mymy = new SSHelloWorld();
+        mymy.say();
+        console.groupEnd();
+
+    </script>
+    <!-- 각 모듈들이 하나의 html 안에서 모든 내용이 병합되는 원리이므로 각 모듈파일간의 변수, 함수, 클래스, 객체 이름이 중복될 경우 에러가 발생할 수 있다.-->
+</body>
+</html>

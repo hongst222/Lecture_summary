@@ -43,11 +43,11 @@ function solution(id_list, report, k) {
         userList[REPORTER][1].push(REPORTED);
 
     }
-    //console.log(userList);
-
+    console.log(userList);
+    
     //  정지유저, 이메일
     const bannedUser = id_list.filter(id => userList[id][0] >= k );
-    // console.log(bannedUser);
+    console.log(bannedUser);
     const emailLog = id_list.map(id => {
         return userList[id][1].filter(reportLog => bannedUser.includes(reportLog)).length;
     })
@@ -56,4 +56,4 @@ function solution(id_list, report, k) {
 }
 
 solution(id_list1,report1,k);
-solution(id_list2,report2,k);
+//solution(id_list2,report2,k);

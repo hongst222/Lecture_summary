@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            
+            function start(){
+                //  이 코드가 정상실행되기 위해서는 브라우저가 HTML 코드를 끝까지 해석한 후 실행해야함.
+                const foo = document.getElementById('foo');    
+                foo.innerHTML = 'Hello World';
+            }
+        </script>
+    </head>
+    <body onload = "start()">
+        <h1 id= "foo"></h1>
+    </body>
+</html>

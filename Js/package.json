@@ -1,0 +1,17 @@
+{
+  
+  "name": "js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "animations.js": "^1.0.10",
+    "aos": "^2.3.4",
+    "chart.js": "^3.9.1"
+  }
+}
