@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .subplot{
+                float: left;
+                width: 33.3%;
+                padding: 50px;
+                box-sizing: border-box;
+            }
+
+            .subplot-item {
+                width: auto;
+                height: 320px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>Chart.js</h1>
+        <p>
+            <a href="https://www.chart.js.org/">https://www.chartjs.org</a>
+        </p>
+        <hr />
+
+        <div class="subplot">
+            <h2>기본 선 그래프</h2>
+            <div class="subplot-item">
+                <canvas id="mychart1"></canvas>
+            </div>
+        </div>
+
+        <div class="subplot">
+            <h2>기본 막대 그래프</h2>
+            <div class="subplot-item">
+                <canvas id="mychart2"></canvas>
+            </div>
+        </div>
+
+        <div class="subplot">
+            <h2>다중 막대 그래프</h2>
+            <div class="subplot-item">
+                <canvas id="mychart3"></canvas>
+            </div>
+        </div>
+
+        <div class="subplot">
+            <h2>파이 그래프</h2>
+            <div class="subplot-item">
+                <canvas id="mychart4"></canvas>
+            </div>
+        </div>
+
+        <div class="subplot">
+            <h2>polar Area Chart 그래프</h2>
+            <div class="subplot-item">
+                <canvas id="mychart5"></canvas>
+            </div>
+        </div>
+
+        <div class="subplot">
+            <h2>도넛 그래프</h2>
+            <div class="subplot-item">
+                <canvas id="mychart6"></canvas>
+            </div>
+        </div>
+
+        <div class="subplot">
+            <h2>산점도 그래프</h2>
+            <div class="subplot-item">
+                <canvas id="mychart7"></canvas>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../node_modules/chart.js/dist/chart.min.js"></script>
+        <script>
+            //  data set
+            const dataset = [
+                { 이름: '철수', 학년: 1, 성별: '남자', 국어: 98, 영어: 82, 수학: 88, 과학: 64},
+                { 이름: '영희', 학년: 2, 성별: '여자', 국어: 88, 영어: 90, 수학: 62, 과학: 72},
+                { 이름: '민수', 학년: 1, 성별: '남자', 국어: 92, 영어: 70, 수학: 71, 과학: 87},
+                { 이름: '수현', 학년: 3, 성별: '여자', 국어: 63, 영어: 60, 수학: 31, 과학: 70},
+                { 이름: '호영', 학년: 4, 성별: '남자', 국어: 120, 영어: 50, 수학: 84, 과학: 88}
+            ];
+
+            //  각 항목을 분할하여 저장하기 위한 배열
+            const names = []
+            const kor = [];
+            const eng = []
+            const math = [];
+            const science = [];
+
+            // 항목 분할
+            for (let i = 0; i < dataset.length; i++){
+                names[i] = dataset[i].이름;
+                kor[i] = dataset[i].국어;
+                eng[i] = dataset[i].영어;
+                math[i] = dataset[i].수학;
+                //science[i] = dataset.[i].과학;
+            }
+
+            //  로그 확인
+            console.log(names,kor,eng);
+
+            //  그래프가 표시될 캔버스 영역
+            let mychart = [];
+            for(let i = 1; i<=7; i++){
+                let a = "mychart" + i;
+                mychart[i-1] = document.getElementById(a);
+            }
+            
+            /** 선 그래프 그리기 */
+            new Chart(mychart1, {
+                // graph type (line, bar, pie, polarArea, doughnut, scatter)
+                type: 'line',
+
+                //  data area
+                data: {
+                    // x axis
+                    labels: names,
+                    // data struct
+                    datasets: [
+                        // data1
+                        {
+                            label: '국어', // data name
+                            data: kor, // data array
+                            borderWidth: 1,
+                            borderColor: 'ff6600',
+                        },
+                        // 2번 데이터
+                        {
+                            label: '영어',
+                            data: eng,
+                            borderWidth: 3,
+                            borderColor: '#ff00ff',
+                        },
+                    ],
+                },
+                //  그래프 옵션
+                options: {
+                    //  그래프의 가로, 세로 비율 유지(기본값 true) -> 부모 div의 넓이에만 맞추고 높이 무시
+                    //  false일 경우 부모의 width, height에 크기를 맞춤
+                    maintainAspectRatio: false,
+                }
+            });
+            
+        </script>
+        
+    </body>
+</html>

@@ -23,3 +23,39 @@ clothes1 = [["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_
 clothes2 = [["crow_mask", "face"], ["blue_sunglasses", "face"], ["smoky_makeup", "face"]];
 
 console.log(solution(clothes1));
+
+
+//
+
+
+new Chart(mychart1, {
+    
+    type: 'line',
+
+    
+    data: {
+        
+        labels: names,
+        
+        datasets: [
+            
+            {
+                label: '국어', 
+                data: kor, 
+                borderWidth: 1,
+                borderColor: 'ff6600',
+            },
+            
+            {
+                label: '영어',
+                data: eng,
+                borderWidth: 3,
+                borderColor: '#ff00ff',
+            },
+        ],
+    },
+    //  그래프 옵션
+    options: {
+        maintainAspectRatio: false,
+    }
+});
