@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style></style>
+
+<body>
+
+    <table border='1'>
+        <tbody class="studentinfo"></tbody>
+    </table>
+
+
+    <script type="module">
+        import ajaxHelper from '../helper/AjaxHelper.js';
+        const ids = new URLSearchParams(location.search).get('id');
+        console.log(ids);
+        let json = null;
+        (async () => {
+            try {
+                json = await ajaxHelper.requestAsync('http://localhost:3001/student/');
+            } catch (e) {
+                console.error(e);
+                alert(`[${e.status}], ${e.text}\n ${e.msg}`);
+            }
+            const studInfo = document.querySelector('.studentinfo');
+
+            json.forEach((e, i) => {
+                if (e.id == ids) {
+                    console.log()
+                    for (const k in e) {
+                        let td1 = document.createElement('td')
+                        let td2 = document.createElement('td')
+                        let tr = document.createElement('tr');
+
+                        if (e[k]) {
+                            td2.innerHTML = e[k];
+                        } else {
+                            td2.innerHTML = '없음';
+                        }
+                        td1.innerHTML = k;
+                        studInfo.appendChild(tr);
+                        tr.appendChild(td1);
+                        tr.appendChild(td2);
+
+                    }
+
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

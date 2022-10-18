@@ -1,0 +1,21 @@
+@mixin rowWrap(){
+    width:100%;
+    display: flex;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+@mixin rowbox($number){
+    width: $number+0%;
+    padding: 0 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+@mixin lowTitle(){ 
+    
+    h3{
+        padding: 10px 0px;
+        border-bottom: 1px solid rgba(125,125,125,0.2);
+        font-size: 24px;
+    }  
+}

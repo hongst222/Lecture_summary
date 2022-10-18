@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>22.10.06.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%EC%9D%B4%EC%A4%91-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84%ED%81%90-%EB%AC%B8%EC%A0%9C">이중 우선순위큐 문제</h1>
+<h2 id="%EB%AC%B8%EC%A0%9C-%EC%A1%B0%EA%B1%B4">문제 조건</h2>
+<hr>
+<p>I  숫자 --&gt; 주어진 숫자를 que에 삽입합니다.</p>
+<p>D 1 --&gt; 최댓값을 삭제합니다.</p>
+<p>D -1 --&gt; 최솟값을 삭제합니다.</p>
+<p>배열이 비어있으면 [0,0] 그렇지 않으면 [최댓값,최솟값]을 return 해줍니다.</p>
+<hr>
+<p>먼저 que 배열과 answer 배열을 생성해줍니다.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">let</span> que = [];
+<span class="hljs-keyword">let</span> answer = [];
+</div></code></pre>
+<ol>
+<li>
+<p>operations 배열을 탐색하여 조건에 따라 que에 명령을 내립니다.</p>
+</li>
+<li>
+<p>이때 먼저 operation의 원소들의 공백을 제거하여 명령어를 다루기 쉽게 가공해줍니다.</p>
+</li>
+</ol>
+<pre class="hljs"><code><div>I 숫자 --&gt; I숫자 
+D -1 --&gt; D-1  
+D 1 --&gt; D1
+</div></code></pre>
+<ol start="3">
+<li>
+<p>str의 0번째 인덱스의 값이 I라면 그 뒤의 부분을 잘라서 정수형으로 변경해준 뒤 que 배열에 push 해줍니다.</p>
+</li>
+<li>
+<p>명령어의 첫번째 부분이 D일 경우 두번째 부분이 '1'이면 최댓값을 제거하고 '1'이 아닌 경우 최솟값을 제거해줍니다('-'이면)</p>
+</li>
+<li>
+<p>조건문들이 통과한 후에는 que 배열의 최댓값과 최솟값을 answer배열에 각 인덱스에 넣어줍니다.</p>
+</li>
+<li>
+<p>que가 비어있을 경우에 answer배열도 비어있을 것. 그러므로 que의 길이가 0인 경우 문제 조건에 따라 [0,0]을 넣어줍니다.</p>
+</li>
+</ol>
+<pre class="hljs"><code><div>    <span class="hljs-comment">// 1.</span>
+    operations.forEach(<span class="hljs-function">(<span class="hljs-params">v,i</span>) =&gt;</span> {
+        <span class="hljs-comment">// 2.</span>
+        
+        <span class="hljs-keyword">let</span> str = v.replaceAll(<span class="hljs-string">' '</span>,<span class="hljs-string">''</span>);
+        
+        <span class="hljs-comment">// 3.</span>
+        <span class="hljs-keyword">if</span>(str[<span class="hljs-number">0</span>] === <span class="hljs-string">'I'</span>) {
+            <span class="hljs-keyword">let</span> input = <span class="hljs-built_in">parseInt</span>(str.substring(<span class="hljs-number">1</span>));
+            que.push(input);
+            <span class="hljs-built_in">console</span>.group(<span class="hljs-string">`que배열에 값 <span class="hljs-subst">${input}</span> 입력`</span>);
+            <span class="hljs-built_in">console</span>.log(que);
+            <span class="hljs-built_in">console</span>.groupEnd();
+            
+        } 
+        <span class="hljs-comment">// 4.</span>
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(str[<span class="hljs-number">0</span>] === <span class="hljs-string">'D'</span>) {
+            <span class="hljs-keyword">if</span>(str[<span class="hljs-number">1</span>] === <span class="hljs-string">'1'</span>) {
+                <span class="hljs-keyword">let</span> output = que.indexOf(answer[<span class="hljs-number">0</span>]);
+                <span class="hljs-built_in">console</span>.group(<span class="hljs-string">`최댓값 (<span class="hljs-subst">${que[output]}</span>) 삭제`</span>);
+                que.splice(output,<span class="hljs-number">1</span>);
+                <span class="hljs-built_in">console</span>.log(que);
+                <span class="hljs-built_in">console</span>.groupEnd();
+            } <span class="hljs-keyword">else</span>{
+                <span class="hljs-keyword">let</span> output = que.indexOf(answer[<span class="hljs-number">1</span>]);
+                <span class="hljs-built_in">console</span>.group(<span class="hljs-string">`최솟값 (<span class="hljs-subst">${que[output]}</span>) 삭제`</span>);
+                que.splice(output,<span class="hljs-number">1</span>);
+                <span class="hljs-built_in">console</span>.log(que)
+                <span class="hljs-built_in">console</span>.groupEnd();
+            }
+        }
+        <span class="hljs-comment">// 5.</span>
+        answer[<span class="hljs-number">0</span>] = <span class="hljs-built_in">Math</span>.max(...que);
+        answer[<span class="hljs-number">1</span>] = <span class="hljs-built_in">Math</span>.min(...que);
+    });
+    
+    <span class="hljs-comment">// 6. </span>
+    answer = que.length === <span class="hljs-number">0</span>? [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>]: answer;
+    <span class="hljs-built_in">console</span>.log(answer);
+    <span class="hljs-keyword">return</span> answer;
+</div></code></pre>
+<h1 id="%EB%94%94%EC%8A%A4%ED%81%AC-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC">디스크 컨트롤러</h1>
+<h2 id="%EB%AC%B8%EC%A0%9C%EC%A1%B0%EA%B1%B4">문제조건</h2>
+<hr>
+<ul>
+<li>디스크가 최대한 쉬지 않아야 한다.</li>
+<li>디스크가 하나의 프로세스를 처리한 후 각 상황마다 뭘 처리해야할지 결정해야한다.</li>
+<li><strong>진행중인 프로세스가 없을때 프로세스 처리 요청을 가장 먼저 한 녀석을 소요시간에 상관없이 먼저 처리해야한다.</strong></li>
+</ul>
+<hr>
+<hr>
+<h2 id="%ED%95%84%EC%9A%94-%EB%B3%80%EC%88%98">필요 변수</h2>
+<pre><code>1. 현재시간 (진행중인 작업이 끝난 후의 시간)
+2. 각 프로세스마다 요청 시간으로 부터 작업소요 시간이 얼마인지 넣어줄 배열
+3. 프로세스처리 대기열을 표현하는 배열
+4. solution 함수 파라미터 배열의 길이
+</code></pre>
+<hr>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">solution</span>(<span class="hljs-params">jobs</span>) </span>{
+     
+    <span class="hljs-comment">// 1</span>
+    <span class="hljs-keyword">let</span> time = <span class="hljs-number">0</span>;
+    <span class="hljs-comment">// 2</span>
+    <span class="hljs-keyword">let</span> answer = [];
+    <span class="hljs-comment">// 3</span>
+     <span class="hljs-keyword">let</span> arr = [];
+    <span class="hljs-comment">// 4</span>
+    <span class="hljs-keyword">let</span> len = jobs.length;
+
+    <span class="hljs-comment">// 진행중인 프로세스가 없을 때 프로세스 처리 요청을 가장 먼저 한 녀석을 소요시간에 상관없이 처리해야 하므로 </span>
+    <span class="hljs-comment">// 처리 요청 시간 순으로 정렬해줌.</span>
+    jobs.sort(<span class="hljs-function">(<span class="hljs-params">a,b</span>) =&gt;</span> a[<span class="hljs-number">0</span>]-b[<span class="hljs-number">0</span>]);
+    
+    
+    <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>){
+        <span class="hljs-comment">// 프로세스 요청 시간이 time 보다 작거나 같으면 처리 대기열에 넣기.</span>
+        <span class="hljs-comment">// 여러 개 넣어두고 그 속에서 정렬하고 다시 작업을 받고 이러는 순서임</span>
+        
+        <span class="hljs-keyword">if</span>(i&lt;len &amp;&amp; jobs[i][<span class="hljs-number">0</span>] &lt;= time){
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`프로세스를 추가하였습니다. <span class="hljs-subst">${jobs[i]}</span>`</span>);
+            arr.push(jobs[i++]);
+            <span class="hljs-comment">// process 처리 대기열에서 소요시간 순으로 정리함</span>
+            arr.sort(<span class="hljs-function">(<span class="hljs-params">a,b</span>) =&gt;</span> a[<span class="hljs-number">1</span>]-b[<span class="hljs-number">1</span>]);
+            
+            <span class="hljs-keyword">continue</span>; <span class="hljs-comment">// 첫번째 작업 소요시간 이전에 요청된 작업목록을 모두 대기열에 넣기 위함.</span>
+        }
+        
+        <span class="hljs-comment">// 작업 대기열에 아무것도 없을 경우</span>
+        <span class="hljs-keyword">if</span>(!arr.length) {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`대기열에 처리할 프로세스가 없습니다.`</span>);
+            time = jobs[i][<span class="hljs-number">0</span>]; <span class="hljs-comment">// 처리할 것이 없기 때문에 첫 작업요청 시간을 time에 저장.</span>
+        } <span class="hljs-keyword">else</span> {           <span class="hljs-comment">// 작업대기열에 작업할 것이 있을 경우 정렬되어 있기 때문에 맨 앞에 것 부터 꺼내서 처리함.</span>
+            <span class="hljs-keyword">let</span> progress = arr.shift();
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${progress}</span> 처리 완료`</span>);
+            <span class="hljs-comment">//요청으로부터 소요시간 = (현재 시간 - 작업요청시간 + 작업소요시간)</span>
+            answer.push((time - progress[<span class="hljs-number">0</span>] + progress[<span class="hljs-number">1</span>]));
+            time += progress[<span class="hljs-number">1</span>];
+        }
+        <span class="hljs-comment">// 작업 대기열에 아무것도 없고, 작업 목록에 있는 모든 요청을 처리한 경우 (i가 jobs.length와 동일함)</span>
+        <span class="hljs-keyword">if</span>(!arr.length &amp;&amp; i==len){
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'디스크 작업 종료'</span>);
+            <span class="hljs-keyword">break</span>;
+        }
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`프로세스 처리 대기열 <span class="hljs-subst">${arr}</span>`</span>);
+        
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.floor(answer.reduce(<span class="hljs-function">(<span class="hljs-params">acc,cur</span>)=&gt;</span> acc+cur)/answer.length);
+}
+</div></code></pre>
+<p><img src="./1.JPG" alt=""></p>
+
+</body>
+</html>

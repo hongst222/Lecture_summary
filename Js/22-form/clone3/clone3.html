@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3.CSS Template</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+    <input type="checkbox" name="" id="side-btn">
+    <label for="side-btn" class="blur">safsa</label>
+    <div class="nav">
+        <nav class="wrap">
+            <label for="side-btn" class="nav_btn_left">
+                <span></span>
+                <!--bcolor 주고 -->
+                <span></span>
+                <span></span>
+            </label>
+            <p>My Food</p>
+            <p>Mail</p>
+        </nav>
+    </div>
+
+    <div class="side_menu">
+        <label for="side-btn">Close Menu</label>
+        <label class="move">My Food</label>
+        <label class="move">About</label>
+    </div>
+
+    <div class="main_wrap">
+
+        <div class="width_wrap myfood">
+            <div class="content">
+                <img src="./img/sandwich.jpg" alt="">
+                <h3>The perfect SandWich, Areal NYC Classic</h3>
+                <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+
+            <div class="content">
+                <img src="./img/steak.jpg" alt="">
+                <h3>Let Me Tell You About This Steak</h3>
+                <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.
+                </p>
+            </div>
+
+            <div class="content">
+                <img src="./img/cherries.jpg" alt="">
+                <h3>Cherries, interrupted</h3>
+                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+                <p>What else?</p>
+            </div>
+
+            <div class="content">
+                <img src="./img/wine.jpg" alt="">
+                <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
+                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+            <div class="content">
+                <img src="./img/popsicle.jpg" alt="">
+                <h3>All I Need Is a Popsicle</h3>
+                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+
+            <div class="content">
+                <img src="./img/salmon.jpg" alt="">
+                <h3>Salmon For Your Skin</h3>
+                <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum
+                    lipsum./p>
+            </div>
+
+            <div class="content">
+                <img src="./img/sandwich.jpg" alt="">
+                <h3>The Perfect Sandwich, A Real Classic</h3>
+                <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+
+            <div class="content">
+                <img src="./img/croissant.jpg" alt="">
+                <h3>Le French</h3>
+                <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+
+            </div>
+        </div>
+
+
+        <div class="myfood_bottom">
+            <a href="#">«</a>
+            <a href="#">1</a>
+            <a href="#">2 </a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">»</a>
+        </div>
+        <hr class="start_about">
+        <div class="about">
+            <h2>About Me, The Food Man</h2>
+            <div class="img_wrap">
+                <img src="./img/chef.jpg" alt="chef">
+            </div>
+            <div class="text">
+                <h5><b>I am Who I AM!</b> </h5>
+                <h6><i>With passion For Real, Good Food</i></h6>
+                <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest
+                    of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed
+                    tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non
+                    fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae,
+                    ultricies congue gravida diam non fringilla.</p>
+            </div>
+        </div>
+        <hr>
+        <footer>
+            <div class="box">
+                <h2>FOOTER</h2>
+                <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies
+                    congue gravida diam non fringilla.</p>
+                <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp">w3.css</a></p>
+            </div>
+            <div class="box">
+                <h2>BLOG POSTS</h2>
+                <ul>
+                    <li>
+                        <img src="./img/workshop.jpg" alt="workshop">
+                        <span>Lorem</span><br>
+                        <span>Sed mattis nunc</span>
+                    </li>
+                    <li>
+                        <img src="./img/gondol.jpg" alt="ss">
+                        <span>Ipsum</span> <br> <span>Praes tinci sed</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>POPULAR TAGS</h2>
+                <div>
+                    <span>Travel</span> <span>New York</span> <span>Dinner</span>
+                    <span>Salmon</span>
+                    <span>France</span> <span>Drinnks</span> <span>Ideas</span> <span>Flavors</span>
+                    <span>cuisine</span>
+                    <span>chicken</span>
+                    <span>Dressing</span>
+                    <span>Fried</span>
+                    <span>Fish</span>
+                    <span>Duck</span>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    <script type="module">
+        import goto from "./js/sideModule.js";
+        let navHeight = document.querySelector(".nav").offsetHeight;
+        let moveArr = ['.myfood', '.start_about'];
+        document.querySelectorAll(".move").forEach((e, i) => {
+            let pos = document.querySelector(moveArr[i]).offsetTop;
+            console.log(pos);
+            e.addEventListener('click', e2 => goto(pos, navHeight));
+        });
+
+    </script>
+</body>
+
+</html>

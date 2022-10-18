@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>22.09.22스터디.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%ED%99%8D%EC%8A%B9%ED%83%9D-%EB%B2%A0%EC%8A%A4%ED%8A%B8-%EC%95%A8%EB%B2%94-%ED%92%80%EC%9D%B4">홍승택 베스트 앨범 풀이</h1>
+<blockquote>
+<p>소요시간 1시간 40분</p>
+</blockquote>
+<blockquote>
+<p>정확도 (100/100)</p>
+</blockquote>
+<h3 id="%EB%AC%B8%EC%A0%9C">문제</h3>
+<p><img src="./img/1.JPG" alt=""></p>
+<h4 id="%EC%9E%85%EB%A0%A5%EA%B0%92">입력값</h4>
+<pre class="hljs"><code><div>genres = [<span class="hljs-string">"classic"</span>, <span class="hljs-string">"pop"</span>, <span class="hljs-string">"classic"</span>, <span class="hljs-string">"classic"</span>, <span class="hljs-string">"pop"</span>]
+plays  =[<span class="hljs-number">500</span>, <span class="hljs-number">600</span>, <span class="hljs-number">150</span>, <span class="hljs-number">800</span>, <span class="hljs-number">2500</span>]
+</div></code></pre>
+<h4 id="%EC%9E%A5%EB%A5%B4-%EC%9E%AC%EC%83%9D-%ED%9A%9F%EC%88%98-%EC%B4%9D%ED%95%A9-%EA%B5%AC%ED%95%98%EA%B8%B0">장르 재생 횟수 총합 구하기</h4>
+<pre class="hljs"><code><div>    <span class="hljs-keyword">let</span> totalPlay = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>();
+
+    
+    genres.forEach(<span class="hljs-function">(<span class="hljs-params">e,i</span>) =&gt;</span> {
+        totalPlay.set(genres[i], (totalPlay.get(genres[i])|<span class="hljs-number">0</span>) + plays[i]);
+    }); 
+
+    <span class="hljs-comment">// totalPlay를 아래와 같이 만들어준다.</span>
+
+    <span class="hljs-comment">//  Map {</span>
+    <span class="hljs-comment">//       장르1(key) =&gt; 총 재생 횟수(value) </span>
+    <span class="hljs-comment">//       장르2(key) =&gt; 총 재생 횟수(value) </span>
+    <span class="hljs-comment">//                    ...</span>
+    <span class="hljs-comment">//  } </span>
+
+    <span class="hljs-comment">//totalPlay.set(장르, (totalPlay의 value를 받아오거나 0)에다가 'play[i]'(재생횟수)를 더해준다.)</span>
+
+    <span class="hljs-comment">//결국 forEach문을 통해 genres 배열을 탐색하면서 각 장르의 재생 횟수들을 모두더해줌.</span>
+
+    <span class="hljs-comment">// 장르 별 총 재생 횟수 출력</span>
+    <span class="hljs-built_in">console</span>.log(totalPlay);
+</div></code></pre>
+<h4 id="%EC%B6%9C%EB%A0%A5-%EA%B2%B0%EA%B3%BC">출력 결과</h4>
+<pre class="hljs"><code><div>    Map(2) { 'classic' =&gt; 1450, 'pop' =&gt; 3100 }
+</div></code></pre>
+<h3 id="%EC%9E%A5%EB%A5%B4-%EB%B0%B0%EC%97%B4-%EC%83%9D%EC%84%B1-%EB%B0%8F-%EC%A0%9C%EC%9D%B4%EC%8A%A8-%EC%83%9D%EC%84%B1">장르 배열 생성 및 제이슨 생성</h3>
+<pre class="hljs"><code><div>    <span class="hljs-keyword">let</span> total = <span class="hljs-built_in">Array</span>.from(totalPlay.keys());                           <span class="hljs-comment">// totalPlay는 총 재생 횟수를 갖는 map이기 때문에 중복 값이 없으므로 </span>
+                                                                        <span class="hljs-comment">// totalPlay의 key(장르)들을 가져와서 배열로 생성한다.</span>
+    
+    <span class="hljs-keyword">let</span> js = {};                                                        <span class="hljs-comment">// 제이슨 형태로 해당 장르에서 첫번째로 가장 많이 들은 곡과</span>
+                                                                        <span class="hljs-comment">// 두번째로 가장 많이 들은 곡을 추출하기 위해 빈 제이슨 생성</span>
+    
+    total.forEach(<span class="hljs-function">(<span class="hljs-params">e,i</span>) =&gt;</span> {                                            <span class="hljs-comment">// 장르를 가지고 있는 total 배열을 탐색하며 </span>
+        js[e] = {                                                       <span class="hljs-comment">// js[장르] = {first: [0,0], second[0,0]} 형태로 장르별 JSON 생성</span>
+            <span class="hljs-attr">first</span>: [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],                                               <span class="hljs-comment">// 여기서 배열 [0,0]은 각각 [plays에서의 인덱스, 플레이 횟수]</span>
+            <span class="hljs-attr">second</span>: [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>]
+        };
+    });
+    <span class="hljs-comment">// 1,2번째 횟수들 생성</span>
+    genres.forEach(<span class="hljs-function">(<span class="hljs-params">e,i</span>) =&gt;</span> {                                           <span class="hljs-comment">// 각 장르의 각 곡마다의 인덱스 번호와 재생횟수를 가져오기 위해</span>
+       <span class="hljs-keyword">if</span>(js[e][<span class="hljs-string">"first"</span>][<span class="hljs-number">1</span>] &lt; plays[i]){                                <span class="hljs-comment">// genres 배열을 탐색한다.</span>
+           <span class="hljs-keyword">let</span> tmp =js[e][<span class="hljs-string">"first"</span>]                                      <span class="hljs-comment">// js[장르][first] = [인덱스,플레이 횟수]</span>
+                                                                        <span class="hljs-comment">// if(js[장르][first]의 재생횟수가 현재 인덱스의 재생 횟수보다 작다면)</span>
+           js[e][<span class="hljs-string">"first"</span>] = [i,plays[i]];                               <span class="hljs-comment">// js[장르][first]항목의 값을 현재 인덱스 및 플레이 횟수로 바꿔준다.</span>
+           js[e][<span class="hljs-string">"second"</span>] = tmp;                                       <span class="hljs-comment">// 그리고 현재 first항목의 값들을 second에 넣어준다 (원래는 제일 컸었으니까)</span>
+       } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (js[e][<span class="hljs-string">"second"</span>][<span class="hljs-number">1</span>] &lt;plays[i]){                        <span class="hljs-comment">// first보다 작지만 second보다 큰 경우 현재 값들을 second에 넣어준다.</span>
+           js[e][<span class="hljs-string">"second"</span>] = [i,plays[i]];
+       }  
+    });
+    <span class="hljs-built_in">console</span>.log(js);
+</div></code></pre>
+<h4 id="%EC%9E%85%EB%A0%A5%EA%B0%92">입력값</h4>
+<pre class="hljs"><code><div>genres = [<span class="hljs-string">"classic"</span>, <span class="hljs-string">"pop"</span>, <span class="hljs-string">"classic"</span>, <span class="hljs-string">"classic"</span>, <span class="hljs-string">"pop"</span>]
+plays  =[<span class="hljs-number">500</span>, <span class="hljs-number">600</span>, <span class="hljs-number">150</span>, <span class="hljs-number">800</span>, <span class="hljs-number">2500</span>]
+</div></code></pre>
+<h4 id="json-%ED%98%95%ED%83%9C">JSON 형태</h4>
+<pre class="hljs"><code><div>total.forEach를 통해 만들어지는 JSON 형태 
+{
+  classic: { first: [ 0, 0 ], second: [ 0, 0 ] },
+  pop: { first: [ 0, 0 ], second: [ 0, 0 ] }
+}
+
+genres.forEach를 통해 만들어지는 JSON 형태
+{
+  classic: { first: [ 3, 800 ], second: [ 0, 500 ] },
+  pop: { first: [ 4, 2500 ], second: [ 1, 600 ] }
+}
+</div></code></pre>
+<h4 id="%EC%9E%A5%EB%A5%B4-%EB%B3%84-%EC%B4%9D-%EC%9E%AC%EC%83%9D-%ED%9A%9F%EC%88%98-%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C-%EC%A0%95%EB%A0%AC">장르 별 총 재생 횟수 내림차순 정렬</h4>
+<pre class="hljs"><code><div>    <span class="hljs-comment">// 장르 별 총 재생 횟수 내림차순</span>
+    total.sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> totalPlay.get(b)-totalPlay.get(a));
+    <span class="hljs-keyword">let</span> answer = [];
+    total.forEach(<span class="hljs-function">(<span class="hljs-params">e,i</span>) =&gt;</span> {
+        answer.push(js[e][<span class="hljs-string">"first"</span>][<span class="hljs-number">0</span>]);                         <span class="hljs-comment">// 한 곡이라도 있을 경우에만 total에 들어가므로 first는 조건 없이 push</span>
+        <span class="hljs-keyword">if</span>(js[e][<span class="hljs-string">"second"</span>][<span class="hljs-number">1</span>]){                                 <span class="hljs-comment">// js[e]["second"][1] (그 장르의 두번째로 많이 재생한 횟수)가 0 이면</span>
+            answer.push(js[e][<span class="hljs-string">"second"</span>][<span class="hljs-number">0</span>]);                    <span class="hljs-comment">// 그 장르의 음악은 한 가지 이므로 push하지 않음</span>
+        } 
+    });
+    
+    <span class="hljs-keyword">return</span> answer;
+
+</div></code></pre>
+<h4 id="%EB%82%B4%EB%A6%BC%EC%B0%A8%EC%88%9C-%EA%B2%B0%EA%B3%BC">내림차순 결과</h4>
+<pre class="hljs"><code><div>재생 횟수 내림 차순
+[ 'pop', 'classic' ]
+</div></code></pre>
+<h5 id="%EC%B5%9C%EC%A2%85-return">최종 return</h5>
+<pre class="hljs"><code><div>[4, 1, 3, 0]
+</div></code></pre>
+
+</body>
+</html>

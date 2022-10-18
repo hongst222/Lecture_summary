@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>학과관리 ::: MySchool</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- header -->
+        <div data-include="inc/header.html"></div>
+        <!-- body-->
+        <section>
+            <form name="form" id="department-form">
+                <div class="form-group">
+                    <label for="name">교수이름<span class="text-danger">*</span></label>
+                    <div>
+                        <input type="text" name="name" id="name" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="userid">아이디<span class="text-danger">*</span></label>
+                    <div>
+                        <input type="text" name="userid" id="userid" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="position">직위</label>
+                    <div>
+                        <div class="form-radio">
+                            <label for="professor" class="a">교수</label>
+                            <input type="radio" name="position" id="professor" value='교수'>
+                        </div>
+
+                        <div class="form-radio">
+                            <label for="assoprofessor" class='a'>부교수</label>
+                            <input type="radio" name="position" id="assoprofessor" value='부교수'>
+                        </div>
+
+                        <div class="form-radio">
+                            <label for="assistprofessor" class='a'>조교수</label>
+                            <input type="radio" name="position" id="assistprofessor" value='조교수'>
+                        </div>
+
+                        <div class="form-radio">
+                            <label for="partLecture" class='a'>전임강사</label>
+                            <input type="radio" name="parosition" id="partLecture" value='전임강사'>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="hiredate">근무시작일</label>
+                    <div>
+                        <input type="date" name="hiredate" id="hiredate" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="deptno">담당전공번호</label>
+                    <div>
+                        <input type="text" name="deptno" id="deptno" />
+                    </div>
+                </div>
+
+
+                <hr />
+                <div class="text-center">
+                    <button type="submit">저장하기</button>
+                    <button type="reset">다시 작성</button>
+                </div>
+            </form>
+        </section>
+        <!-- footer -->
+        <div data-include="inc/footer.html"></div>
+    </div>
+
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="assets/js/include.js"></script>
+    <script type='module'>
+        import RegexHelper from './assets/helper/RegexHelper.js';
+        document.querySelector('#department-form').addEventListener('submit', async e => {
+            e.preventDefault();
+
+            const regexHelper = RegexHelper.getInstance();
+
+            // 입력값 받아오기
+            const name = document.querySelector('#name').value;
+            const userid = document.querySelector('#userid').value;
+            const position = document.querySelector('#position').value;
+            const hiredate = document.querySelector('#hiredate').value;
+            const deptno = document.querySelector('#deptno').value;
+
+            
+            let json = null;
+            try {
+                const response = await axios.post('http://localhost:3001/professor', {
+                    name: name,
+                    userid: userid,
+                    position: position,
+                    hiredate: hiredate,
+                    deptno: deptno,
+                });
+
+                regexHelper.value(document.querySelector('#name'), '이름을 입력하세요.');
+                regexHelper.maxLength(document.querySelector('#name'), 10, '글자수는 최대 10자 입니다.');
+                regexHelper.minLength(document.querySelector('#name'), 1, '이름은 최소 1자 이상입니다.');
+                regexHelper.kor(document.querySelector('#name'), '이름은 한글로만 작성해주세요.');
+
+                regexHelper.value(document.querySelector('#userid'), '아이디를 입력하세요.');
+                regexHelper.maxLength(document.querySelector('#userid'), 10, '글자수는 최대 10자 입니다.');
+                regexHelper.minLength(document.querySelector('#userid'), 3, '아이디는 최소 3자 이상입니다.');
+                regexHelper.engNum(document.querySelector('#userid'), '아이디는 영문숫자 조합으로 작성해주세요.');
+
+                regexHelper.check(document.querySelector('#position'), '직위를 선택하세요.');
+                regexHelper.checkMin(document.querySelector('#position'), 1, '하나의 직위만 선택해주세요.');
+
+
+                regexHelper.value(document.querySelector('#hiredate'), '근무 시작일을 선택해주세요.');
+
+                regexHelper.value(document.querySelector('#deptno'), '담당과목번호를 입력하세요.');
+                regexHelper.maxLength(document.querySelector('#deptno'), 10, '글자수는 최대 4자 입니다.');
+                regexHelper.minLength(document.querySelector('#deptno'), 3, '담당과목번호는 최소 3자 이상입니다.');
+                regexHelper.num(document.querySelector('#deptno'), '담당과목번호는 숫자로만 작성해주세요.');
+                json = response.data;
+            } catch (e) {
+                alert(e.message);
+                console.error(e);
+                document.querySelector(e.selector).focus();
+                return;
+            }
+            // 백엔드에서 데이터 저장에 대한 응답으로 보낸 JSON에는 생성된 신규 항목에 대한 일련 번호가 포함되어 있다.
+            // 이 값을 활용하여 상세 페이지로 이동해야 한다.
+            // 이 때, 어떤 대상을 열람할 것인지에 대한 GET 파라미터를 구성한다.
+            window.location = `view.html?id=${json.id}`
+        });
+    </script>
+</body>
+
+</html>

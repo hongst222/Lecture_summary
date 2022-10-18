@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2022.09.27.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%EA%B8%B0%EB%8A%A5%EA%B0%9C%EB%B0%9C">기능개발</h1>
+<h2 id="%EB%AC%B8%EC%A0%9C-%EC%84%A4%EB%AA%85">문제 설명</h2>
+<p>프로그래머스 팀에서는 기능 개선 작업을 수행 중입니다. 각 기능은 진도가 100%일 때 서비스에 반영할 수 있습니다.</p>
+<p>또, 각 기능의 개발속도는 모두 다르기 때문에 뒤에 있는 기능이 앞에 있는 기능보다 먼저 개발될 수 있고, 이때 뒤에 있는 기능은 앞에 있는 기능이 배포될 때 함께 배포됩니다.</p>
+<p>먼저 배포되어야 하는 순서대로 작업의 진도가 적힌 정수 배열 progresses와 각 작업의 개발 속도가 적힌 정수 배열 speeds가 주어질 때 각 배포마다 몇 개의 기능이 배포되는지를 return 하도록 solution 함수를 완성하세요.</p>
+<p>제한 사항
+작업의 개수(progresses, speeds배열의 길이)는 100개 이하입니다.
+작업 진도는 100 미만의 자연수입니다.
+작업 속도는 100 이하의 자연수입니다.
+배포는 하루에 한 번만 할 수 있으며, 하루의 끝에 이루어진다고 가정합니다. 예를 들어 진도율이 95%인 작업의 개발 속도가 하루에 4%라면 배포는 2일 뒤에 이루어집니다.
+입출력 예
+progresses	speeds	return
+[93, 30, 55]	[1, 30, 5]	[2, 1]
+[95, 90, 99, 99, 80, 99]	[1, 1, 1, 1, 1, 1]	[1, 3, 2]
+입출력 예 설명
+입출력 예 #1
+첫 번째 기능은 93% 완료되어 있고 하루에 1%씩 작업이 가능하므로 7일간 작업 후 배포가 가능합니다.
+두 번째 기능은 30%가 완료되어 있고 하루에 30%씩 작업이 가능하므로 3일간 작업 후 배포가 가능합니다. 하지만 이전 첫 번째 기능이 아직 완성된 상태가 아니기 때문에 첫 번째 기능이 배포되는 7일째 배포됩니다.
+세 번째 기능은 55%가 완료되어 있고 하루에 5%씩 작업이 가능하므로 9일간 작업 후 배포가 가능합니다.</p>
+<p>따라서 7일째에 2개의 기능, 9일째에 1개의 기능이 배포됩니다.</p>
+<p>입출력 예 #2
+모든 기능이 하루에 1%씩 작업이 가능하므로, 작업이 끝나기까지 남은 일수는 각각 5일, 10일, 1일, 1일, 20일, 1일입니다. 어떤 기능이 먼저 완성되었더라도 앞에 있는 모든 기능이 완성되지 않으면 배포가 불가능합니다.</p>
+<p>따라서 5일째에 1개의 기능, 10일째에 3개의 기능, 20일째에 2개의 기능이 배포됩니다.</p>
+<p>※ 공지 - 2020년 7월 14일 테스트케이스가 추가되었습니다.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">solution</span>(<span class="hljs-params">progresses, speeds</span>) </span>{
+    <span class="hljs-keyword">let</span> arr = [];
+    progresses.forEach(<span class="hljs-function">(<span class="hljs-params">e,i</span>) =&gt;</span> {
+        arr.push(<span class="hljs-built_in">Math</span>.ceil((<span class="hljs-number">100</span>-e)/speeds[i])); 
+    });
+    <span class="hljs-built_in">console</span>.log(arr);
+</div></code></pre>
+<h3 id="%EC%B6%9C%EB%A0%A5%EA%B2%B0%EA%B3%BC">출력결과</h3>
+<p><img src="./2022.09.27_1.JPG" alt=""></p>
+<pre class="hljs"><code><div>
+    <span class="hljs-keyword">let</span> high = arr[<span class="hljs-number">0</span>];          <span class="hljs-comment">// hig의 첫번째 값은 arr의 0번째 인덱스 값</span>
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">as</span> = [];                <span class="hljs-comment">// 함수에서 리턴할 (정답) 배열</span>
+    <span class="hljs-keyword">let</span> cnt =<span class="hljs-number">0</span>;                 <span class="hljs-comment">// 이번회차에 배포 될 프로그램 개수</span>
+    <span class="hljs-keyword">let</span> al = arr.length - <span class="hljs-number">1</span>;    <span class="hljs-comment">// arr의 마지막 인덱스 번호</span>
+    arr.forEach(<span class="hljs-function">(<span class="hljs-params">e,i</span>) =&gt;</span> {
+        
+        <span class="hljs-comment">// high가 e(이번 탐색 인덱스의 value)보다 크거나 같다면 이번회차에 배포 될 프로그램 개수(cnt) 를 하나 증가해준다. </span>
+        <span class="hljs-keyword">if</span>(high &gt;= e) {
+            cnt ++;
+        }
+        <span class="hljs-comment">//  high가 e(이번 탐색 인덱스의 value)보다 작다면 high에 e를 넣어주고, cnt를 as(정답배열)에 push해준다.</span>
+        <span class="hljs-comment">// 그 후 cnt를 1로 초기화해준다(바로 이전 인덱스까지의 cnt를 푸쉬한 후에 이번 인덱스를 카운트해야하기 때문?)</span>
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(high &lt; e){
+            high = e;
+            <span class="hljs-keyword">as</span>.push(cnt);
+            cnt = <span class="hljs-number">1</span>;
+        }
+        <span class="hljs-comment">//만약 마지막 인덱스 번호까지 왔다면 check라는 콘솔과 함께 cnt(개수)를 as(정답배열)에 push해준다.</span>
+        <span class="hljs-keyword">if</span>(i === al){
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"check when : "</span> + i + <span class="hljs-string">"   cnt : "</span> + cnt);
+                <span class="hljs-keyword">as</span>.push(cnt);
+        }
+    })
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">as</span>;
+}
+</div></code></pre>
+<h1 id="%EA%B2%B0%EA%B3%BC">결과</h1>
+<p><img src="./2022.09.27_2.JPG" alt=""></p>
+<h1 id="%ED%94%84%EB%A6%B0%ED%84%B0">프린터</h1>
+<h2 id="%EB%AC%B8%EC%A0%9C-%EC%84%A4%EB%AA%85">문제 설명</h2>
+<p>일반적인 프린터는 인쇄 요청이 들어온 순서대로 인쇄합니다. 그렇기 때문에 중요한 문서가 나중에 인쇄될 수 있습니다. 이런 문제를 보완하기 위해 중요도가 높은 문서를 먼저 인쇄하는 프린터를 개발했습니다. 이 새롭게 개발한 프린터는 아래와 같은 방식으로 인쇄 작업을 수행합니다.</p>
+<ol>
+<li>인쇄 대기목록의 가장 앞에 있는 문서(J)를 대기목록에서 꺼냅니다.</li>
+<li>나머지 인쇄 대기목록에서 J보다 중요도가 높은 문서가 한 개라도 존재하면 J를 대기목록의 가장 마지막에 넣습니다.</li>
+<li>그렇지 않으면 J를 인쇄합니다.
+예를 들어, 4개의 문서(A, B, C, D)가 순서대로 인쇄 대기목록에 있고 중요도가 2 1 3 2 라면 C D A B 순으로 인쇄하게 됩니다.</li>
+</ol>
+<p>내가 인쇄를 요청한 문서가 몇 번째로 인쇄되는지 알고 싶습니다. 위의 예에서 C는 1번째로, A는 3번째로 인쇄됩니다.</p>
+<p>현재 대기목록에 있는 문서의 중요도가 순서대로 담긴 배열 priorities와 내가 인쇄를 요청한 문서가 현재 대기목록의 어떤 위치에 있는지를 알려주는 location이 매개변수로 주어질 때, 내가 인쇄를 요청한 문서가 몇 번째로 인쇄되는지 return 하도록 solution 함수를 작성해주세요.</p>
+<p>제한사항
+현재 대기목록에는 1개 이상 100개 이하의 문서가 있습니다.
+인쇄 작업의 중요도는 1~9로 표현하며 숫자가 클수록 중요하다는 뜻입니다.
+location은 0 이상 (현재 대기목록에 있는 작업 수 - 1) 이하의 값을 가지며 대기목록의 가장 앞에 있으면 0, 두 번째에 있으면 1로 표현합니다.
+입출력 예
+priorities	location	return
+[2, 1, 3, 2]	2	1
+[1, 1, 9, 1, 1, 1]	0	5
+입출력 예 설명
+예제 #1</p>
+<p>문제에 나온 예와 같습니다.</p>
+<p>예제 #2</p>
+<p>6개의 문서(A, B, C, D, E, F)가 인쇄 대기목록에 있고 중요도가 1 1 9 1 1 1 이므로 C D E F A B 순으로 인쇄합니다.</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">solution</span>(<span class="hljs-params">arr, location</span>) </span>{
+
+    <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">let</span> position = location;    <span class="hljs-comment">// 목표물의 위치</span>
+    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i + <span class="hljs-number">1</span>; j &lt; arr.length; j++) {
+            <span class="hljs-comment">//  i번째의 value가 j번째의 value보다 작다면 arr[i]가 맨 뒤로 이동 </span>
+            <span class="hljs-keyword">if</span> (arr[i] &lt; arr[j]) {
+                arr.push(+(arr.splice(i, <span class="hljs-number">1</span>)));
+
+                <span class="hljs-keyword">if</span> (i === position) {
+                    <span class="hljs-comment">// 목표물이 맨 뒤로 밀리기 때문에 position을 arr.length-1로 해줌</span>
+                    position = arr.length - <span class="hljs-number">1</span>;
+                    <span class="hljs-comment">// 배열안의 요소들의 순서가 바뀌었기 때문에 다시 i번째부터 탐색하게 하기 위해 i--를 해주고 (for문 후에 i++이 되기 때문)</span>
+                    <span class="hljs-comment">// break를 통해 for문에서 빠져나간다.</span>
+                    i--;
+                    <span class="hljs-keyword">break</span>;
+                } <span class="hljs-keyword">else</span> {
+                    <span class="hljs-comment">// 목표물의 앞에 있는 배열 요소들 중에 하나가 맨 뒤로 밀려나기 때문에 position 값에서 1을 빼준다.</span>
+                    position--;
+                    <span class="hljs-comment">// 배열안의 요소들의 순서가 바뀌었기 때문에 다시 i번째부터 탐색하게 하기 위해 i--를 해주고 (for문 후에 i++이 되기 때문)</span>
+                    <span class="hljs-comment">// break를 통해 for문에서 빠져나간다.</span>
+                    i--;
+                    <span class="hljs-keyword">break</span>;
+                }
+            }
+        }
+        <span class="hljs-comment">//  아무것도 push하지 않은 상태에서 내부 for문이 끝나고</span>
+        <span class="hljs-comment">//  i가 position에 해당하는 인덱스까지 오게 되면 return</span>
+        <span class="hljs-keyword">if</span> (i === position) <span class="hljs-keyword">return</span> position + <span class="hljs-number">1</span>;
+        i++;
+    }
+}
+</div></code></pre>
+<h3 id="%EA%B2%B0%EA%B3%BC">결과</h3>
+<p><img src="./2022.09.27_3.JPG" alt=""></p>
+
+</body>
+</html>
