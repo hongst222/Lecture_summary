@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "react-helmet-async": "^1.3.0",
     "react-router-dom": "^6.4.2",
     "yarn": "^1.22.19"
   }
