@@ -1,9 +1,14 @@
 import React from 'react'
+import { createGlobalStyle } from 'styled-components'
 
-const GlobalStyles = () => {
-    return (
-        <div>GlobalStyles</div>
-    )
-}
+const GlobalStyles = createGlobalStyle`
+    * {
+        font-family: 'Malgun Gothic', 'NanumGothic';
+    }
 
-export default GlobalStyles
+    body {
+        padding: 10px 20px;
+        margin: 0;
+    }
+`;
+export default GlobalStyles;
