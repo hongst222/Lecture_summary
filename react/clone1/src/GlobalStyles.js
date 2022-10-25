@@ -14,14 +14,19 @@ const GlobalStyles = createGlobalStyle`
  
 
   *{
-    font-family: 'Noto Sans KR';
+    font-family: 'Times New Roman', Georgia, Serif;
   }
 
   body{
     margin: 0;
     padding: 0;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display";
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 5px;
+}
 `;
-
-
 export default GlobalStyles;

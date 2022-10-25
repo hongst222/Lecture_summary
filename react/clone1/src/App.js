@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 
+import Navbar from './common/Navbar';
+import Footer from './common/Footer';
+import Jumbotron from "./common/Jumbotron";
+import Main from './pages/Main';
+import Meta from "./Meta";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Meta title='클론코딩1' description='연습문제06' />
+      <Navbar/>
+      <Jumbotron></Jumbotron>
+      <Routes>
+        <Route path="/" exact = {true} element = {<Main/>} />
+      </Routes>
+      <Footer/>
     </div>
   );
-}
+};
 
 export default App;
