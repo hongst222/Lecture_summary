@@ -4,7 +4,7 @@ import React from 'react';
 const PrintStar = () => {
     const console = React.useRef();    //ref
     const [rowNum, setRowNum] = React.useState(0); //state
-    const onRowNumChange = () => e => {
+    const onRowNumChange =  e => {
         setRowNum(e.currentTarget.value);
     }
 
