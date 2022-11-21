@@ -3,7 +3,7 @@
  * 
  * http://github.com/kimcoder/react-simple-image-slider#readme
  * 
- * yarn add react-simple-image-slier
+ * yarn add react-simple-image-slider
  */
 import React, { memo } from 'react';
 import ImageSlider from 'react-simple-image-slider';
